@@ -1,5 +1,18 @@
 // Dashboard profile
 
+// async function loadDashboard() {
+//   const email = localStorage.getItem("loggedInUser");
+//   if (!email) { window.location.href = "login.html"; return; }
+
+//   const res = await fetch(`/api/dashboard/${email}`);
+//   const data = await res.json();
+//   document.getElementById("userName").innerText = `${data.user.fullName}`;
+//   document.getElementById("userEmail").innerText = `${data.user.email}`;
+// }
+// loadDashboard();
+
+
+
 async function loadDashboard() {
   const email = localStorage.getItem("loggedInUser");
   if (!email) { window.location.href = "login.html"; return; }
@@ -9,7 +22,11 @@ async function loadDashboard() {
   document.getElementById("userName").innerText = `${data.user.fullName}`;
   document.getElementById("userEmail").innerText = `${data.user.email}`;
 }
-loadDashboard();
+
+// ✅ Only run on dashboard page
+if (window.location.pathname.includes("dashboard.html")) {
+  loadDashboard();
+}
 
 
 // login signup button
