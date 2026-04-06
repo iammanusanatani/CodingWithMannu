@@ -58,3 +58,11 @@ function openSidebar() {
 function closeSidebar() {
   document.getElementById("mySidebar").classList.remove("open");
 }
+
+async function getData() {
+  const res = await fetch("https://your-backend.onrender.com/api/tutorials");
+  const data = await res.json();
+  console.log(data);
+}
+
+getData();
