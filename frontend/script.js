@@ -123,21 +123,21 @@ getData();
 // dashboard logoutbtn
 
 document.addEventListener("DOMContentLoaded", () => {
-    const logoutBtn = document.getElementById("logoutBtn");
+  const logoutBtn = document.getElementById("logoutBtn");
 
-    // User details show karna
-    const userName = localStorage.getItem("userName");
-    const userEmail = localStorage.getItem("userEmail");
+  // User details show karna
+  const userName = localStorage.getItem("userName");
+  const userEmail = localStorage.getItem("userEmail");
 
-    if (userName) document.getElementById("userName").textContent = userName;
-    if (userEmail) document.getElementById("userEmail").textContent = userEmail;
+  if (userName) document.getElementById("userName").textContent = userName;
+  if (userEmail) document.getElementById("userEmail").textContent = userEmail;
 
-    // Logout button ka kaam
-    logoutBtn.addEventListener("click", () => {
-        // Sab data clear karo
-        localStorage.clear();
+  // Logout button ka kaam
+  logoutBtn.addEventListener("click", () => {
+    // Sab data clear karo
+    localStorage.clear();
 
-        // Index.html pe redirect karo
-        window.location.href = "index.html";
-    });
+    // Index.html pe redirect karo
+    window.location.href = "index.html";
+  });
 });

@@ -134,6 +134,7 @@ header {
 }
 
 .heroHeading {
+    font-family: "Arvo", serif;
     color: orange;
     font-size: 4rem;
 }
@@ -157,6 +158,7 @@ header {
     cursor: pointer;
     border: 2px solid #0f3460;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
 }
 
 .startBtn:hover {
@@ -281,12 +283,12 @@ header {
     }
 
     .heroHeading {
-        font-size: 2rem;
+        font-size: 51px;
     }
 
     .heroSub,
     .subHeadingContent {
-        font-size: 18px;
+        font-size: 20px;
     }
 }
 
@@ -364,6 +366,9 @@ header {
     height: 70%;
 }
 
+#nav-auth-top a {
+    color: #0f3460;
+}
 
 .navAuthTop{
     color: #030303;

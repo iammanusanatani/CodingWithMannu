@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    
+
     <form id="signupForm">
         <h2 class="signupheading">Signup</h2>
         <h2 class="cwmheading">CodingWithMannu</h2>
@@ -21,7 +21,15 @@
             <option value="admin">Admin</option>
         </select>
         <button type="submit">Signup</button>
+
+        <!-- Already account section -->
+        <p class="already-account">
+            Already have an account?
+            <a href="login.html">Login here</a>
+        </p>
     </form>
+
+
 
     <script>
         document.getElementById("signupForm").addEventListener("submit", async (e) => {
@@ -33,7 +41,7 @@
 
             if (role === "admin") { alert("Only one admin allowed!"); return; }
 
-            const res = await fetch("/api/auth/signup", {
+            const res = await fetch("https://codingwithmannu-1.onrender.com/api/auth/signup", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ fullName, email, password, role })

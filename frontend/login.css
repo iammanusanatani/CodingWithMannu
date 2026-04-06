@@ -81,3 +81,21 @@ button:hover {
     font-size: 20px;
   }
 }
+
+
+.already-account {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.already-account a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
