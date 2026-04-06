@@ -60,7 +60,7 @@ function closeSidebar() {
 }
 
 async function getData() {
-  const res = await fetch("https://your-backend.onrender.com/api/tutorials");
+  const res = await fetch("https://codingwithmannu-1.onrender.com");
   const data = await res.json();
   console.log(data);
 }
