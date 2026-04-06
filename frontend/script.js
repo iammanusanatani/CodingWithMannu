@@ -11,22 +11,53 @@
 // }
 // loadDashboard();
 
-
-
 async function loadDashboard() {
   const email = localStorage.getItem("loggedInUser");
-  if (!email) { window.location.href = "login.html"; return; }
 
-  const res = await fetch(`/api/dashboard/${email}`);
-  const data = await res.json();
-  document.getElementById("userName").innerText = `${data.user.fullName}`;
-  document.getElementById("userEmail").innerText = `${data.user.email}`;
+  if (!email) {
+    window.location.href = "login.html";
+    return;
+  }
+
+  try {
+    const res = await fetch(`https://codingwithmannu-1.onrender.com/api/dashboard/${email}`);
+    const data = await res.json();
+
+    // 👇 ye line important hai
+    console.log(data);
+
+    // 👇 safe way (dono cases handle karega)
+    document.getElementById("userName").innerText =
+      data.user?.fullName || data.fullName || "No Name";
+
+    document.getElementById("userEmail").innerText =
+      data.user?.email || data.email || "No Email";
+
+  } catch (err) {
+    console.log(err);
+    alert("Error loading dashboard");
+  }
 }
 
-// ✅ Only run on dashboard page
+// sirf dashboard page pe run
 if (window.location.pathname.includes("dashboard.html")) {
   loadDashboard();
 }
+
+// async function loadDashboard() {
+//   const email = localStorage.getItem("loggedInUser");
+//   if (!email) { window.location.href = "login.html"; return; }
+
+//   const res = await fetch(`/api/dashboard/${email}`);
+//   const data = await res.json();
+//   document.getElementById("userName").innerText = `${data.user.fullName}`;
+//   document.getElementById("userEmail").innerText = `${data.user.email}`;
+// }
+
+// // ✅ Only run on dashboard page
+// if (window.location.pathname.includes("dashboard.html")) {
+//   loadDashboard();
+// }
 
 
 // login signup button
@@ -83,3 +114,30 @@ async function getData() {
 }
 
 getData();
+
+
+
+
+
+
+// dashboard logoutbtn
+
+document.addEventListener("DOMContentLoaded", () => {
+    const logoutBtn = document.getElementById("logoutBtn");
+
+    // User details show karna
+    const userName = localStorage.getItem("userName");
+    const userEmail = localStorage.getItem("userEmail");
+
+    if (userName) document.getElementById("userName").textContent = userName;
+    if (userEmail) document.getElementById("userEmail").textContent = userEmail;
+
+    // Logout button ka kaam
+    logoutBtn.addEventListener("click", () => {
+        // Sab data clear karo
+        localStorage.clear();
+
+        // Index.html pe redirect karo
+        window.location.href = "index.html";
+    });
+});
