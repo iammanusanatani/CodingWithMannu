@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -100,4 +101,116 @@
   </script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutorials - CodingWithMannu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="tutorials.css">
+  <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+  <header>
+    <h2>Tutorials</h2>
+  </header>
+
+  <main>
+    <div id="tutorialsContainer" class="tutorials-grid"></div>
+  </main>
+
+  <!-- Footer -->
+
+  <footer class="footer">
+        <div class="footeritems">
+            <h class="webName">CodingWithMannu</h>
+        </div>
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide high-quality courses in AI/ML, Web Development, Data Science, and more to help learners
+                    build future-ready skills.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="#contactSection">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: codingwithmannu@gmail.com</li>
+                    <li>Phone: +91</li>
+                    <li>Address: Uttar Pradesh, India</li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CodingWithMannu. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+  <script>
+    // Example Tutorials Data (directly in HTML)
+    const tutorials = [
+      {
+        title: "HTML Basics",
+        description: "Learn the structure of a webpage using HTML tags like <h1>, <p>, and <a>.",
+        videoUrl: "https://www.youtube.com/watch?v=UB1O30fR-EE"
+      },
+      {
+        title: "CSS Styling",
+        description: "Understand how to style your webpage with colors, fonts, and layouts using CSS.",
+        videoUrl: "https://www.youtube.com/watch?v=yfoY53QXEnI"
+      },
+      {
+        title: "JavaScript Fundamentals",
+        description: "Discover how to add interactivity to your site with JavaScript basics like variables, loops, and events.",
+        videoUrl: "https://www.youtube.com/watch?v=W6NZfCO5SIk"
+      }
+    ];
+
+    // Render tutorials into the container
+    document.getElementById("tutorialsContainer").innerHTML =
+      tutorials.map(t => `
+        <div class="tutorial-card">
+          <h3>${t.title}</h3>
+          <p>${t.description}</p>
+          ${t.videoUrl ? `<a href="${t.videoUrl}" target="_blank" class="btn">Watch Video</a>` : ""}
+        </div>
+      `).join("");
+  </script>
+</body>
+
+>>>>>>> 3c77a60 (Updated structure with section tags)
 </html>

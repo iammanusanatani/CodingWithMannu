@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Sidebar base */
 .sidebar {
   height: 100%;
@@ -101,4 +102,109 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+=======
+/* Sidebar base */
+.sidebar {
+  height: 100%;
+  width: 0;
+  /* hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 20px;
+  z-index: 1000;
+}
+
+/* Sidebar open state */
+.sidebar.open {
+  width: 60%;
+}
+
+/* Links */
+.sidebar .navLinks a {
+  display: block;
+  padding: 12px 20px;
+  text-decoration: none;
+  color: #000;
+  transition: background 0.2s;
+}
+
+.sidebar .navLinks a:hover {
+  background: #f0f0f0;
+}
+
+/* Top box */
+.topBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  color: #ff6a00;
+}
+
+.close-btn {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Bottom buttons */
+.lastLogoutbtn {
+  position: absolute;
+  justify-self: center;
+  margin-bottom: 34px;
+  bottom: 20px;
+  width: 70%;
+  text-align: center;
+}
+
+.profile-btn {
+  width: 70%;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.4rem 1rem;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 800;
+  color: #333;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+
+#sidebar-user{
+  height: 60%;
+  align-content: end;
+}
+
+
+#logoutBtn, .logout-btn{
+  margin-top: 5px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.35rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+>>>>>>> 3c77a60 (Updated structure with section tags)
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Global Reset */
 * {
   margin: 0;
@@ -99,3 +100,106 @@ button:hover {
 .already-account a:hover {
     text-decoration: underline;
 }
+=======
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+}
+
+/* Form Container */
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 380px;
+}
+
+/* Heading */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loginheading{
+   text-align: center;
+  margin-bottom: 20px;
+  color: #ff6a00;
+} 
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #ee0979;
+  outline: none;
+}
+
+/* Button */
+button {
+  width: 100%;
+  padding: 12px;
+  background: #ee0979;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #d5076c;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  form {
+    padding: 20px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+}
+
+
+.already-account {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+
+.already-account a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+>>>>>>> 3c77a60 (Updated structure with section tags)
