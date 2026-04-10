@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,67 +59,4 @@
     </script>
 </body>
 
-=======
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup - CodingWithMannu</title>
-    <link rel="stylesheet" href="sginup.css">
-</head>
-
-<body>
-
-    <form id="signupForm">
-        <h2 class="signupheading">Signup</h2>
-        <h2 class="cwmheading">CodingWithMannu</h2>
-        <input type="text" id="fullName" placeholder="Full Name" required>
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Password" required>
-        <select id="role">
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select>
-        <button type="submit">Signup</button>
-
-        <!-- Already account section -->
-        <p class="already-account">
-            Already have an account?
-            <a href="login.html">Login here</a>
-        </p>
-    </form>
-
-
-
-    <script>
-        document.getElementById("signupForm").addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const fullName = document.getElementById("fullName").value;
-            const email = document.getElementById("email").value;
-            const password = document.getElementById("password").value;
-            const role = document.getElementById("role").value;
-
-            if (role === "admin") { alert("Only one admin allowed!"); return; }
-
-            const res = await fetch("https://codingwithmannu-1.onrender.com/api/auth/signup", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ fullName, email, password, role })
-            });
-            const data = await res.json();
-            if (data.error) { alert(data.error); return; }
-
-            // Save user info for persistent login
-            localStorage.setItem("loggedInUser", email);
-            localStorage.setItem("loggedInUserName", data.user.fullName);
-
-            alert(data.message);
-            window.location.href = "dashboard.html";
-        });
-    </script>
-</body>
-
->>>>>>> 3c77a60 (Updated structure with section tags)
 </html>
