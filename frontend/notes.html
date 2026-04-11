@@ -25,7 +25,9 @@
             <div class="note-card">
                 <h3>C Language</h3>
                 <p>Basics of C: Variables, Data Types, Loops, Functions.</p>
-                <a href="c.html" class="read-more">Read More</a>
+                <p><span id="views-note1">0</span> views</p>
+                <button onclick="openNote('note1','c.html')">Read More</button>
+                <!-- <a href="c.html" class="read-more">Read More</a> -->
             </div>
 
             <!-- <div class="note-card">
@@ -118,6 +120,43 @@
             <p>&copy; 2026 CodingWithMannu. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const API = "https://codingwithmannu-1.onrender.com/api/notes";
+
+
+        // load views
+        fetch(`${API}/view/note1`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("views-note1").innerText = data.views;
+            });
+
+        function openNote(noteId, file) {
+
+            const key = "viewed_" + noteId;
+
+            if (!localStorage.getItem(key)) {
+
+                fetch(`${API}/view/${noteId}`, {
+                    method: "POST"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+
+                        document.getElementById(`views-${noteId}`).innerText = data.views;
+
+                        localStorage.setItem(key, true);
+
+                        window.location.href = file;
+                    });
+
+            } else {
+                window.location.href = file;
+            }
+        }
+    </script>
+
 
 </body>
 
