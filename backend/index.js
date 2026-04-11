@@ -19,6 +19,7 @@ app.use(express.static(path.join(__dirname, "../frontend")));
 app.use("/api/auth", authRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 app.use("/api/tutorials", tutorialRoutes);
+app.use("/api/notes", require("./routes/noteRoutes"));
 
 // Home route
 app.get("/", (req, res) => {
