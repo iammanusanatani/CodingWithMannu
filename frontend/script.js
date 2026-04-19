@@ -74,8 +74,8 @@ function renderNavbar() {
 
   if (email) {
     // Show user name at top
-    navAuthTop.innerHTML = `<a href="dashboard.html">${name || "Profile"}</a>`;
-    sidebarUser.innerHTML = `<a href="dashboard.html" class="profile-btn">${name || "Profile"}</a>`;
+    navAuthTop.innerHTML = `<a href="dashboard.html" class="navAuthTop">${name || "Profile"}</a>`;
+    sidebarUser.innerHTML = `<p>👤<p><a href="dashboard.html" class="profile-btn">${name || "Profile"}</a>`;
 
     // Show logout at bottom
     sidebarBottom.innerHTML = `<a href="#" id="logoutBtn">Logout</a>`;
@@ -89,7 +89,7 @@ function renderNavbar() {
   } else {
     // Show login/signup when logged out
     navAuthTop.innerHTML = `<a  href="login.html" class="navAuthTop">Login</a> <a href="signup.html" class="navAuthTop">Signup</a>`;
-    sidebarUser.innerHTML = ""; // no user name at top
+    sidebarUser.style="display:none;"; // no user name at top
     sidebarBottom.innerHTML = `<a href="login.html" class="logout-btn">Login</a> <a href="signup.html" class="logout-btn">Signup</a>`;
   }
 }
@@ -99,13 +99,24 @@ renderNavbar();
 
 // sidebar
 
+// function openSidebar() {
+//   document.getElementById("mySidebar").classList.add("open");
+// }
+
+// function closeSidebar() {
+//   document.getElementById("mySidebar").classList.remove("open");
+// }
 function openSidebar() {
-  document.getElementById("mySidebar").classList.add("open");
+  document.getElementById("mySidebar").classList.add("active");
+  document.getElementById("overlay").classList.add("active");
 }
 
 function closeSidebar() {
-  document.getElementById("mySidebar").classList.remove("open");
+  document.getElementById("mySidebar").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
 }
+
+
 
 async function getData() {
   const res = await fetch("https://codingwithmannu-1.onrender.com");
@@ -120,26 +131,54 @@ getData();
 
 
 
-// dashboard logoutbtn
-
-document.addEventListener("DOMContentLoaded", () => {
-  const logoutBtn = document.getElementById("logoutBtn");
-
-  // User details show karna
-  const userName = localStorage.getItem("userName");
-  const userEmail = localStorage.getItem("userEmail");
-
-  if (userName) document.getElementById("userName").textContent = userName;
-  if (userEmail) document.getElementById("userEmail").textContent = userEmail;
-
-  // Logout button ka kaam
-  logoutBtn.addEventListener("click", () => {
-    // Sab data clear karo
-    localStorage.clear();
-
-    // Index.html pe redirect karo
-    window.location.href = "index.html";
+function showPage(index) {
+  pages.forEach((page, i) => {
+    page.classList.remove('active');
   });
+
+  setTimeout(() => {
+    pages[index].classList.add('active');
+  }, 100);
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+window.addEventListener("load", () => {
+  document.getElementById("loader").style.display = "none";
 });
 
+const container = document.querySelector('.scroll-container');
+
+let scrollAmount = 0;
+let isScrolling = true;
+
+// Smooth animation
+function smoothScroll() {
+  if (isScrolling) {
+    scrollAmount += 0.5; // speed control (0.5 = smooth, 1 = fast)
+    container.scrollLeft = scrollAmount;
+
+    // reset at end
+    if (scrollAmount >= container.scrollWidth - container.clientWidth) {
+      scrollAmount = 0;
+    }
+  }
+  requestAnimationFrame(smoothScroll);
+}
+
+// Start animation
+smoothScroll();
+
+// Hover pe stop
+container.addEventListener("mouseenter", () => {
+  isScrolling = false;
+});
+
+// Mouse hatate hi start
+container.addEventListener("mouseleave", () => {
+  isScrolling = true;
+});
 

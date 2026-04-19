@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming Quizs</title>
+    <link rel="stylesheet" href="Quiz.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="start-screen">
+            <h1>Welcome to Quiz</h1>
+            <button onclick="startQuiz()">Start Quiz</button>
+        </div>
+    </div>
+    
+    <div class="quiz-box" id="quizBox">
+        <h3 id="counter"></h3>
+        <div class="timer">⏱ Time: <span id="time">10</span>s</div>
+        <h2 id="question"></h2>
+        <div id="options"></div>
+        <button onclick="Back()">leave</button>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <script>
+        let quiz = [
+            {
+                q: "Who developed C language?",
+                options: ["Dennis Ritchie", "Bjarne Stroustrup", "James Gosling", "Guido van Rossum"],
+                answer: 0
+            },
+            {
+                q: "C language was developed in which year?",
+                options: ["1965", "1972", "1980", "1995"],
+                answer: 1
+            },
+            {
+                q: "Which symbol ends a statement?",
+                options: [".", ",", ";", ":"],
+                answer: 2
+            },
+            {
+                q: "Which loop runs at least once?",
+                options: ["for", "while", "do-while", "none"],
+                answer: 2
+            }
+        ];
+
+        // shuffle
+        quiz.sort(() => Math.random() - 0.5);
+
+        let index = 0;
+        let score = 0;
+        let selectedAnswer = null;
+        let userAnswers = [];
+        let timeLeft = 10;
+        let timer;
+
+        // sound
+        let correctSound = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
+        let wrongSound = new Audio("https://www.soundjay.com/buttons/sounds/button-10.mp3");
+
+        function startTimer() {
+            timeLeft = 10;
+            document.getElementById("time").innerText = timeLeft;
+
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById("time").innerText = timeLeft;
+
+                if (timeLeft === 0) {
+                    clearInterval(timer);
+                    nextQuestion();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            clearInterval(timer);
+            startTimer();
+
+            selectedAnswer = null;
+            const q = quiz[index];
+
+            document.getElementById("counter").innerText =
+                `Question ${index + 1}/${quiz.length}`;
+
+            document.getElementById("question").innerText = q.q;
+
+            let html = "";
+            q.options.forEach((opt, i) => {
+                html += `<div class="option" onclick="selectOption(${i})">${opt}</div>`;
+            });
+
+            document.getElementById("options").innerHTML = html;
+        }
+
+        function selectOption(i) {
+            if (selectedAnswer !== null) return;
+
+            selectedAnswer = i;
+            const correct = quiz[index].answer;
+            const options = document.querySelectorAll(".option");
+
+            options.forEach((opt, idx) => {
+                if (idx === correct) opt.classList.add("correct");
+                else if (idx === i) opt.classList.add("wrong");
+            });
+
+            if (i === correct) correctSound.play();
+            else wrongSound.play();
+        }
+
+        function nextQuestion() {
+            clearInterval(timer);
+
+            userAnswers.push(selectedAnswer);
+
+            if (selectedAnswer === quiz[index].answer) {
+                score++;
+            }
+
+            index++;
+
+            if (index < quiz.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            let percent = (score / quiz.length) * 100;
+
+            // save best score
+            let best = localStorage.getItem("bestScore") || 0;
+            if (score > best) {
+                localStorage.setItem("bestScore", score);
+                best = score;
+            }
+
+            let rank = "Beginner";
+            if (percent > 80) rank = "Expert";
+            else if (percent > 50) rank = "Intermediate";
+
+            document.getElementById("quizBox").innerHTML = `
+        <h2>🎉 Finished</h2>
+        <h3>Score: ${score}/${quiz.length}</h3>
+        <p>Best: ${best}</p>
+        <p>Rank: ${rank}</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <button onclick="location.reload()">Restart</button>
+    `;
+
+            setTimeout(() => {
+                document.getElementById("progress").style.width = percent + "%";
+            }, 200);
+
+        }
+
+        function startQuiz() {
+            document.getElementById("start-screen").style.display = "none";
+            document.getElementById("quizBox").style.display = "block";
+            loadQuestion();
+        }
+        function Back() {
+            window.location.href = "index.html";
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+
+</html>

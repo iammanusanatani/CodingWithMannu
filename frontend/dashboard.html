@@ -19,11 +19,22 @@
             <h2 id="userName" style="text-transform: capitalize;"></h2>
             <p>Email: <span id="userEmail"></span></p>
             <!-- <p>Joined: <span id="joinDate"></span></p> -->
-            <button id="logoutBtn">Logout</button>
         </div>
+        <button onclick="Back()">Go Home</button>
+        <button id="logoutBtn">Logout</button>
+    </div>
 
 
-        <script src="script.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function goBack() {
+            window.location.href = "c-quiz.html";
+        }
+        function Back() {
+            window.location.href = "index.html";
+        }
+        loadHistory();
+    </script>
 </body>
 
 </html>

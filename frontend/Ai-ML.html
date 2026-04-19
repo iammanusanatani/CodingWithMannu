@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI/ML</title>
+    <link rel="stylesheet" href="aiml.css">
+</head>
+
+<body>
+    <div class="card headerCard">
+        <h1>AI-ML</h1>
+    </div>
+    <div class="scroll-container">
+        <button class="day-btn" onclick="goToDay(0)">Day 1</button>
+        <button class="day-btn" onclick="goToDay(1)">Day 2</button>
+        <button class="day-btn" onclick="goToDay(2)">Day 3</button>
+        <button class="day-btn" onclick="goToDay(3)">Day 4</button>
+        <button class="day-btn" onclick="goToDay(4)">Day 5</button>
+        <button class="day-btn" onclick="goToDay(5)">Day 6</button>
+        <button class="day-btn" onclick="goToDay(6)">Day 7</button>
+        <button class="day-btn" onclick="goToDay(7)">Day 8</button>
+        <button class="day-btn" onclick="goToDay(8)">Day 9</button>
+        <button class="day-btn" onclick="goToDay(9)">Day 10</button>
+        <button class="day-btn" onclick="goToDay(10)">Day 11</button>
+        <button class="day-btn" onclick="goToDay(11)">Day 12</button>
+        <button class="day-btn" onclick="goToDay(12)">Day 13</button>
+        <button class="day-btn" onclick="goToDay(13)">Day 14</button>
+        <button class="day-btn" onclick="goToDay(14)">Day 15</button>
+        <button class="day-btn" onclick="goToDay(15)">Day 16</button>
+        <button class="day-btn" onclick="goToDay(16)">Day 17</button>
+        <button class="day-btn" onclick="goToDay(17)">Day 18</button>
+        <button class="day-btn" onclick="goToDay(18)">Day 19</button>
+        <button class="day-btn" onclick="goToDay(19)">Day 20</button>
+    </div>
+    <section id="contents" class="contentSection">
+        <div id="pages-container">
+            <section class="page active section">
+                <div class="card headerCard">
+                    <h1>Day 1</h1>
+                    <p>Introduction to Artificial Intelligence & Role of Mathematics</p>
+                </div>
+
+                <div class="card">
+                    <h2>Definition of AI</h2>
+                    <p><strong>Artificial Intelligence (AI)</strong> is a branch of computer science that focuses on
+                        creating systems capable of performing tasks that normally require human intelligence such
+                        as learning, reasoning, decision-making, and problem-solving.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Why Mathematics is Important in AI</h2>
+                        <p>Mathematics is the backbone of AI because:</p>
+                        <ul>
+                            <li>
+                                <strong>Data Representation</strong><br>
+                                Data ko numbers me convert kiya jata hai<br>
+                                <span class="example">Example: Image → pixels (numbers)</span>
+                            </li>
+                            <li>
+                                <strong>Model Building</strong><br>
+                                AI models mathematical functions hote hain<br>
+                                <span class="example">Example: y = mx + b</span>
+                            </li>
+                            <li>
+                                <strong>Optimization</strong><br>
+                                Best prediction ke liye error minimize karna hota hai
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Real-Life Example</h2>
+                        <p><strong>👉 Netflix Recommendation System</strong></p>
+                        <ul>
+                            <li>Probability → kya tum movie dekhoge</li>
+                            <li>Statistics → average ratings</li>
+                            <li>Linear algebra → user-item matrix</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="day2" class="page section">
+                <div class="card headerCard">
+                    <h1>Day 2</h1>
+                    <p>Numbers and Data Types</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h2>Types of Data</h2>
+                        <ul>
+                            <li>
+                                <strong>Numerical Data</strong><br>
+                                Integer (1, 2, 3)<br>
+                                Float (1.5, 2.7)
+                            </li>
+                            <li>
+                                <strong>Categorical Data</strong><br>
+                                Names, labels<br>
+                                <span class="example">Example: Male/Female</span>
+                            </li>
+                            <li>
+                                <strong>Ordinal Data</strong><br>
+                                Ordered categories<br>
+                                <span class="example">Example: Low, Medium, High</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Python Example</h2>
+                        <pre>
+# Numerical
+a = 10
+b = 3.5
+
+# Categorical
+name = "AI"
+
+# List (dataset)
+data = [10, 20, 30]
+        </pre>
+                    </div>
+                </div>
+            </section>
+            <section class="page section">
+                <div class="card headerCard">
+                    <h1>Day 3</h1>
+                    <p>Measures of Central Tendency</p>
+                </div>
+                <div class="card">
+                    <h2>1. Mean (Average)</h2>
+                    <p><strong>Definition:</strong> Mean is the sum of all values divided by total number of values.</p>
+                    <p><strong>Formula:</strong> Mean = Σx / n</p>
+                    <p><strong>Example:</strong> Data: 10, 20, 30 → Mean = (10+20+30)/3 = 20</p>
+                    <pre>
+import numpy as np
+data = [10,20,30]
+print(np.mean(data))
+      </pre>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>2. Median</h2>
+                        <p><strong>Definition:</strong> Middle value after sorting</p>
+                        <p><strong>Example:</strong> [10, 20, 30] → 20</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>3. Mode</h2>
+                        <p><strong>Definition:</strong> Most frequently occurring value</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Why Important in AI?</h2>
+                    <ul>
+                        <li>Data understanding</li>
+                        <li>Outlier detection</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class=" page section">
+                <div class="card headerCard">
+                    <h1>Day 4</h1>
+                    <p>Variance and Standard Deviation</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Variance</h2>
+                        <p><strong>Definition:</strong> Measures how far data points are from mean.</p>
+                        <p><strong>Formula:</strong> Variance = Σ(x − μ)² / n</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Standard Deviation</h2>
+                        <p><strong>Formula:</strong> Std = √Variance</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Example</h2>
+                    <p>Data: [10, 20, 30]</p>
+                    <ul>
+                        <li>Mean = 20</li>
+                        <li>Differences = [-10, 0, 10]</li>
+                        <li>Squared = [100, 0, 100]</li>
+                        <li>Variance = 66.67</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Code</h2>
+                    <pre>
+import numpy as np
+
+data = [10,20,30]
+
+print(np.var(data))
+print(np.std(data))
+      </pre>
+                </div>
+
+                <div class="card">
+                    <h2>Importance in AI</h2>
+                    <ul>
+                        <li>Detect noise</li>
+                        <li>Normalize data</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="page section">
+                <div class="card headerCard">
+                    <h1>Day 5</h1>
+                    <p>Graphs and Data Visualization</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Types of Graphs</h2>
+                        <ul>
+                            <li>Line Graph</li>
+                            <li>Bar Graph</li>
+                            <li>Histogram</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Example Code</h2>
+                        <pre>
+import matplotlib.pyplot as plt
+
+x = [1,2,3]
+y = [10,20,30]
+
+plt.plot(x,y)
+plt.show()
+        </pre>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Why Important?</h2>
+                    <ul>
+                        <li>Patterns identify karne ke liye</li>
+                        <li>Trends samajhne ke liye</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class=" page section">
+                <div class="card headerCard">
+                    <h1>Day 6</h1>
+                    <p>Linear Relationship</p>
+                </div>
+
+                <div class="card">
+                    <h2>Definition</h2>
+                    <p>Relationship between two variables that forms a straight line.</p>
+                    <p><strong>Formula:</strong> y = mx + b</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Example</h2>
+                        <p>Study hours vs marks</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Code</h2>
+                        <pre>
+import numpy as np
+
+x = np.array([1,2,3])
+y = np.array([2,4,6])
+
+# slope calculation
+m = np.polyfit(x,y,1)
+print(m)
+        </pre>
+                    </div>
+                </div>
+            </section>
+            <section class="page section">
+                <div class="card headerCard">
+                    <h1>Day 7</h1>
+                    <p>Probability Basics</p>
+                </div>
+
+                <div class="card">
+                    <h2>Definition</h2>
+                    <p>Probability measures likelihood of an event.</p>
+                    <p><strong>Formula:</strong> P(A) = favorable / total</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Example</h2>
+                        <p><strong>Dice:</strong> P(3) = 1/6</p>
+                    </div>
+
+                    <div class="card">
+                        <h2>Conditional Probability</h2>
+                        <p><strong>Formula:</strong> P(A | B)</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Importance in AI</h2>
+                    <ul>
+                        <li>Predictions</li>
+                        <li>Classification</li>
+                    </ul>
+                </div>
+            </section>
+
+
+            <section class="page ection">
+                <div class="card headerCard">
+                    <h1>Day 8</h1>
+                    <p>Normal Distribution</p>
+                </div>
+
+                <div class="card">
+                    <h2>Definition</h2>
+                    <p>Normal distribution is represented by a bell-shaped curve.</p>
+                </div>
+
+                <div class="grid">
+                    <div class="card">
+                        <h2>Properties</h2>
+                        <ul>
+                            <li>Mean = Median = Mode</li>
+                            <li>Symmetrical</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h2>Example</h2>
+                        <p>Human height</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h2>Code</h2>
+                    <pre>
+import seaborn as sns
+import numpy as np
+
+data = np.random.randn(1000)
+sns.histplot(data, kde=True)
+      </pre>
+                </div>
+            </section>
+
+            <section class="page section">
+                <div class="card headerCard">
+                    <h1>Day 9</h1>
+                    <p>Mini Math Project</p>
+                </div>
+                <div class="card">
+                    <h2>Project: Student Performance Analysis</h2>
+                    <ul>
+                        <li>Dataset create karo</li>
+                        <li>Mean calculate</li>
+                        <li>Graph plot karo</li>
+                        <li>Conclusion likho</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h2>Sample Code</h2>
+                    <pre>
+import pandas as pd
+
+data = {
+    "Marks": [80, 90, 70, 60, 85]
+}
+
+df = pd.DataFrame(data)
+
+print("Mean:", df["Marks"].mean())
+      </pre>
+                </div>
+            </section>
+
+
+        </div>
+
+        <div class="btnContainer">
+            <button onclick="prevPage()">Previous Day</button>
+            <button onclick="nextPage()">Next Day</button>
+        </div>
+        </div>
+
+    </section>
+        <div class="bottom-nav">
+            <button class="nav-btn active" onclick="window.location.href='index.html'">🏠 Home</button>
+            <button class="nav-btn" onclick="window.location.href='aiRoadmap.html'">📘 Ai Roadmap</button>
+            <button class="nav-btn" onclick="window.location.href='projects.html'">📊 Ai Projects</button>
+        </div>
+    <div id="loader">Comming Soon...</div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

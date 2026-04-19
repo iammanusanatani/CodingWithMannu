@@ -1,104 +1,150 @@
-/* Sidebar base */
-.sidebar {
-  height: 100%;
-  width: 0;
-  /* hidden by default */
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 20px;
-  z-index: 1000;
+/* Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Sidebar open state */
-.sidebar.open {
-  width: 60%;
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100%;
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+    border-top-right-radius: 25px;
+    border-bottom-left-radius: 25px;
+    transition: 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Active */
+.sidebar.active {
+    right: 0;
+}
+
+/* Top */
+.topBox {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    color: white;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Close */
+.close-btn {
+    font-size: 24px;
+    border: none;
+    background: rgba(255,255,255,0.2);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Container */
+.boxContainer {
+    flex: 1;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 /* Links */
-.sidebar .navLinks a {
-  display: block;
-  padding: 12px 20px;
-  text-decoration: none;
-  color: #000;
-  transition: background 0.2s;
+.navLinks {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
-.sidebar .navLinks a:hover {
-  background: #f0f0f0;
+.navLinks a {
+    padding: 14px;
+    border-radius: 14px;
+    text-decoration: none;
+    color: #222;
+    background: rgba(255,255,255,0.6);
+    transition: 0.3s;
+    font-weight: 500;
 }
 
-/* Top box */
-.topBox {
+/* Hover */
+.navLinks a:hover {
+    transform: translateX(8px);
+    background: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* User */
+#sidebar-user {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 15px;
+    padding: 14px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.7);
+    margin-top: 15px;
 }
-
-.logo {
-  font-weight: bold;
-  font-size: 18px;
+#sidebar-user a{
+  margin-left: 5px;
+  font-size: 20px;
   text-decoration: none;
-  color: #ff6a00;
+  color: #222;
 }
 
-.close-btn {
-  font-size: 24px;
-  background: none;
-  border: none;
+/* Logout */
+
+
+#sidebar-bottom{
+  width: 100%;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    color: white;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+
+.lastLogoutbtn a{
+  color: white;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-decoration: none;
   cursor: pointer;
 }
 
-/* Bottom buttons */
-.lastLogoutbtn {
-  position: absolute;
-  justify-self: center;
-  margin-bottom: 34px;
-  bottom: 20px;
-  width: 70%;
-  text-align: center;
+
+/* Overlay */
+#overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 900;
 }
 
-.profile-btn {
-  width: 70%;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0.4rem 1rem;
-  display: flex;
-  justify-self: center;
-  align-items: center;
-  gap: 0.75rem;
-  font-weight: 800;
-  color: #333;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-
-#sidebar-user{
-  height: 60%;
-  align-content: end;
-}
-
-
-#logoutBtn, .logout-btn{
-  margin-top: 5px;
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0.35rem 1rem;
-  cursor: pointer;
-  font-weight: 500;
-  color: #333;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
+#overlay.active {
+    opacity: 1;
+    visibility: visible;
 }

@@ -28,10 +28,11 @@
                 <div class="menuList">
                     <a href="index.html">Home</a>
                     <a href="tutorials.html">Tutorials</a>
-                    <a href="blog.html">Blog</a>
+                    <a href="#">Blog</a>
                     <a href="notes.html">Notes</a>
-                    <a href="contact.html">Contact</a>
-                    <span id="nav-auth-top" style="text-transform: capitalize; color: #0f3460;"></span>
+                    <a href="course.html">Course</a>
+                    <a href="#contactSection">Contact</a>
+                    <span id="nav-auth-top" style="text-transform: capitalize;"></span>
                 </div>
             </div>
             <div class="headeritems Hitem3">
@@ -40,8 +41,35 @@
         </nav>
     </header>
 
+    <!-- scroll-container -->
+
+    <div class="scroll-container">
+        <div class="scroll-content">
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(0)">Python</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(1)">JavaScript</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(2)">Java</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(3)">C#</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(4)">C++</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(5)">C</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(6)">TypeScript</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(7)">Go (Golang)</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(8)">Rust</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(9)">Kotlin</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(10)">Swift</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(11)">PHP</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(12)">Ruby</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(13)">Dart</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(14)">R</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(15)">MATLAB</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(16)">Shell (Bash)</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(17)">SQL</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(18)">Assembly Language</button>
+            <button class="ProgrammingLanguages-btn" onclick="goToDay(19)">AI/ML</button>
+        </div>
+    </div>
 
     <!-- Sidebar -->
+
     <div id="mySidebar" class="sidebar">
         <div class="topBox">
             <a href="index.html" class="logo">CodingWithMannu</a>
@@ -49,22 +77,25 @@
         </div>
         <div class="boxContainer">
             <div class="navLinks">
-                <a href="index.html">Home</a>
-                <a href="tutorials.html">Tutorials</a>
-                <a href="blog.html">Blog</a>
-                <a href="notes.html">Notes</a>
-                <a href="course.html">Course</a>
-                <a href="#contactSection">Contact</a>
+                <a href="index.html">🏠 Home</a>
+                <a href="tutorials.html">📚 Tutorials</a>
+                <a href="#">📝 Blog</a>
+                <a href="notes.html">📄 Notes</a>
+                <a href="course.html">🎓 Course</a>
+                <a href="#contactSection">📞 Contact</a>
             </div>
 
             <div id="sidebar-user" style="text-transform: capitalize;"></div>
 
-            <div id="sidebar-bottom" class="lastLogoutbtn">
-                <!-- <button class="account-btn">My Account ⚙️</button> -->
-                <button class="logout-btn">Logout</button>
-            </div>
+            <div id="sidebar-bottom" class="lastLogoutbtn"></div>
         </div>
     </div>
+
+    <!-- Overlay -->
+    <div id="overlay" onclick="closeSidebar()"></div>
+
+
+    <!-- heroSections -->
 
     <section id="heroSections" class="heroSection">
         <div class="heroContainer">
@@ -75,15 +106,41 @@
                 <h2 class="heroSub">Learn coding step-by-step CodingWithMannu.</h2>
             </div>
             <div class="heroItems">
-                <a class="startBtn" href="signup.html">Start Now</a>
+                <a class="startBtn" href="#featureSection">Learn Now</a>
             </div>
             <div class="heroItems heroItem4">
                 <h class="dailyupdata">{ Daily Updata on 9:30 AM }</h>
             </div>
-
         </div>
     </section>
 
+    <!-- featureSection -->
+
+    <section id="featureSection" class="featureSection">
+        <div class="featureGrid">
+
+            <div class="featureCard notes">
+                <div class="icon">📘</div>
+                <h3>Notes</h3>
+                <p>Quick revision & coding notes</p>
+                <a href="notes.html">Open</a>
+            </div>
+
+            <div class="featureCard courses">
+                <div class="icon">🎓</div>
+                <h3>Courses</h3>
+                <p>Step-by-step learning paths</p>
+                <a href="course.html">Start</a>
+            </div>
+
+            <div class="featureCard projects">
+                <div class="icon">💻</div>
+                <h3>Projects</h3>
+                <p>Build real world projects</p>
+                <a href="#">Explore</a>
+            </div>
+        </div>
+    </section>
     <section id="contactSection" class="contact">
         <h2>Contact Us</h2>
         <p>Have questions about our courses? Send us a message and we’ll get back to you.</p>
