@@ -6,8 +6,8 @@
 
     body {
       font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
+      background: #0f0f0f;
+      color: #ddd;
     }
 
 
@@ -31,9 +31,9 @@
     }
 
     header {
-      background: #2c3e50;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a2efe, #16213e);
       color: #fff;
-      padding: 15px;
+      padding: 25px;
       text-align: center;
     }
 
@@ -44,19 +44,33 @@
     }
 
     .profile-card {
-      background: #fff;
       padding: 20px;
+      padding-bottom: 8px;
       border-radius: 8px;
+      border: 2px solid #00c6ff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
       margin-bottom: 20px;
+    }
+    .web-name{
+      display: flex;
+      justify-content: end;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color:orange;
     }
 
     .profile-card h2 {
       margin-bottom: 10px;
     }
 
+    #userName {
+      font-weight: 500;
+      font-family: cursive;
+      color: #00c6ff;
+    }
+
     .profile-card p {
       margin: 5px 0;
+      font-size: 12px;
     }
 
 
@@ -73,4 +87,13 @@
 
     #logoutBtn:hover {
       background-color: #c0392b;
+    }
+
+    @media (max-width: 600px) {
+      .profile-card h2 {
+        font-size: 18px;
+      }
+      .web-name p{
+        font-size: 12px;
+      }
     }

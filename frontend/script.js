@@ -158,7 +158,7 @@ let isScrolling = true;
 // Smooth animation
 function smoothScroll() {
   if (isScrolling) {
-    scrollAmount += 0.5; // speed control (0.5 = smooth, 1 = fast)
+    scrollAmount += 1; // speed control (0.5 = smooth, 1 = fast)
     container.scrollLeft = scrollAmount;
 
     // reset at end

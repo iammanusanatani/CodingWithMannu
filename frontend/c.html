@@ -10,13 +10,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Highlight.js CSS theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <link rel="stylesheet" href="notes.css">
     <link rel="stylesheet" href="footer.css">
 </head>
 
 <body>
     <header>
-        <h2>C Language - Detailed Notes</h2>
+        <h2>C Programming Language</h2>
+        <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
     </header>
 
     <main>
@@ -43,6 +46,8 @@
             </section>
 
             <section>
+                <details>
+                    <summary style="cursor: pointer;"><strong>Quick Links</strong></summary>
                 <h3>Key Topics</h3>
                 <ul>
                     <li><a href="#variales-Data">Variables and Data Types</a></li>
@@ -52,6 +57,7 @@
                     <li><a href="#arrays">Arrays and Pointers</a></li>
                     <li><a href="#Structures">Structures</a></li>
                 </ul>
+                </details>
             </section>
 
             <section>
@@ -73,7 +79,7 @@
                 <h2>1. Variables and Data Types</h2>
                 <p>A variable is a name used to store data in memory. Data types specify what type of data the variable
                     will store.</p>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -87,7 +93,7 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
 
                 <div id="extraContent1" style="display:none;">
                     <section>
@@ -277,7 +283,7 @@ int main() {
                     <li>Relational → &gt; &lt; == !=</li>
                     <li>Logical → && || !</li>
                 </ul>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 int main() {
     int a = 10, b = 5;
@@ -287,7 +293,7 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
 
                 <div id="extraContent2" style="display:none;">
                     <section>
@@ -650,7 +656,7 @@ int main() {
                 <h2>3. Control Structures</h2>
                 <p>They control the flow of execution.</p>
                 <h3>if-else Example:</h3>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -664,9 +670,9 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
                 <h3>Loop Example (for loop):</h3>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -675,7 +681,7 @@ int main() {
     }
     return 0;
 }
-      </pre>
+      </code></pre>
 
                 <!-- Hidden extra content -->
 
@@ -698,41 +704,41 @@ int main() {
                         <h3>(a) if Statement</h3>
                         <p>The if statement is used to execute a block of code only when a specified condition is true.
                         </p>
-                        <pre>
+                        <pre><code>
 if (condition) {
     // code
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 int age = 18;
 
 if (age >= 18) {
     printf("You can vote");
 }
-      </pre>
+      </code></pre>
 
                         <h3>(b) if-else Statement</h3>
                         <p>The if-else statement is used to execute one block of code if the condition is true and
                             another block if the condition is false.</p>
-                        <pre>
+                        <pre><code>
 if (condition) {
     // true block
 } else {
     // false block
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 if (age >= 18) {
     printf("Adult");
 } else {
     printf("Minor");
 }
-      </pre>
+      </code></pre>
 
                         <h3>(c) else-if Ladder</h3>
                         <p>The else-if ladder is used to check multiple conditions one by one and execute the block of
                             code corresponding to the first true condition.</p>
-                        <pre>
+                        <pre><code>
 if (condition1) {
     // code
 } else if (condition2) {
@@ -740,8 +746,8 @@ if (condition1) {
 } else {
     // default
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 int marks = 75;
 
 if (marks >= 90) {
@@ -751,12 +757,12 @@ if (marks >= 90) {
 } else {
     printf("Fail");
 }
-      </pre>
+      </code></pre>
 
                         <h3>(d) switch Statement</h3>
                         <p>The switch statement is used to select one block of code from multiple options based on the
                             value of an expression.</p>
-                        <pre>
+                        <pre><code>
 switch (expression) {
     case value1:
         // code
@@ -767,8 +773,8 @@ switch (expression) {
     default:
         // code
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 int day = 2;
 
 switch(day) {
@@ -776,7 +782,7 @@ switch(day) {
     case 2: printf("Tuesday"); break;
     default: printf("Invalid");
 }
-      </pre>
+      </code></pre>
                         <p><em>👉 break stops execution from falling into next cases.</em></p>
                     </section>
 
@@ -786,50 +792,50 @@ switch(day) {
 
                         <h3>(a) for Loop</h3>
                         <p>The for loop is used to execute a block of code repeatedly for a fixed number of times.</p>
-                        <pre>
+                        <pre><code>
 for (initialization; condition; update) {
     // code
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 for (int i = 1; i <= 5; i++) {
     printf("%d\n", i);
 }
-      </pre>
+      </code></pre>
 
                         <h3>(b) while Loop</h3>
                         <p>The while loop is used to repeatedly execute a block of code as long as the given condition
                             is true.</p>
-                        <pre>
+                        <pre><code>
 while (condition) {
     // code
 }
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 int i = 1;
 
 while (i <= 5) {
     printf("%d\n", i);
     i++;
 }
-      </pre>
+      </code></pre>
 
                         <h3>(c) do-while Loop</h3>
                         <p>The do-while loop is used to execute a block of code at least once, and then repeat it as
                             long as the condition is true.</p>
-                        <pre>
+                        <pre><code>
 do {
     // code
 } while (condition);
-      </pre>
-                        <pre>
+      </code></pre>
+                        <pre><code>
 int i = 1;
 
 do {
     printf("%d\n", i);
     i++;
 } while (i <= 5);
-      </pre>
+      </code></pre>
                     </section>
 
                     <section>
@@ -839,41 +845,41 @@ do {
                         <h3>(a) break</h3>
                         <p>The break statement is used to immediately terminate a loop or switch statement and transfer
                             control to the next statement.</p>
-                        <pre>
+                        <pre><code>
 for (int i = 1; i <= 5; i++) {
     if (i == 3)
         break;
     printf("%d\n", i);
 }
-      </pre>
+    </code>  </pre>
 
                         <h3>(b) continue</h3>
                         <p>The continue statement is used to skip the current iteration of a loop and continue with the
                             next iteration.</p>
-                        <pre>
+                        <pre><code>
 for (int i = 1; i <= 5; i++) {
     if (i == 3)
         continue;
     printf("%d\n", i);
 }
-      </pre>
+      </code></pre>
 
                         <h3>(c) goto</h3>
                         <p>The goto statement is used to transfer control to a labeled statement within the same
                             function.</p>
-                        <pre>
+                        <pre><code>
 goto label;
 
 label:
     printf("Hello");
-      </pre>
+      </code></pre>
 
                         <h3>(d) return</h3>
                         <p>The return statement is used to exit from a function and optionally return a value to the
                             calling function.</p>
-                        <pre>
+                        <pre><code>
 return 0;
-      </pre>
+      </code></pre>
                     </section>
                 </div>
                 <!-- Button -->
@@ -884,7 +890,7 @@ return 0;
             <section id="functions">
                 <h2>4. Functions</h2>
                 <p>A function is a reusable block of code.</p>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 // function definition
@@ -898,7 +904,7 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
 
                 <div id="extraContent4" style="display: none;">
 
@@ -1105,7 +1111,7 @@ int main() {
             <section id="arrays">
                 <h2>5. Arrays and Pointers</h2>
                 <h3>Arrays</h3>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -1117,9 +1123,9 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
                 <h3>Pointers</h3>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 int main() {
@@ -1132,7 +1138,7 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
                 <div id="extraContent5" style="display: none;">
                     <section>
                         <h2>1. Arrays in C</h2>
@@ -1408,7 +1414,7 @@ int main() {
             <section id="Structures">
                 <h2>6. Structures</h2>
                 <p>Structures group different types of data together.</p>
-                <pre>
+                <pre><code>
 #include &lt;stdio.h&gt;
 
 struct Student {
@@ -1426,7 +1432,7 @@ int main() {
 
     return 0;
 }
-      </pre>
+      </code></pre>
 
                 <div id="extraContent6" style="display: none;">
                     <section>
@@ -1620,8 +1626,6 @@ p = (struct Student*)malloc(sizeof(struct Student));</code></pre>
                 <button id="showMoreBtn6" class="showReadBtn">Read More</button>
             </section>
 
-            </section>
-
             <section>
                 <h2>Final Quick Recap</h2>
                 <ul>
@@ -1636,6 +1640,9 @@ p = (struct Student*)malloc(sizeof(struct Student));</code></pre>
 
         </div>
     </main>
+
+    <!-- page footer -->
+     
     <footer class="footer">
         <div class="footeritems">
             <h class="webName">CodingWithMannu</h>
@@ -1687,106 +1694,11 @@ p = (struct Student*)malloc(sizeof(struct Student));</code></pre>
     </footer>
 
     <button id="backToTop">↑</button>
-    <script>
-        const backToTopBtn = document.getElementById("backToTop");
-
-        // Show button when scrolling down
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.style.display = "block";
-            } else {
-                backToTopBtn.style.display = "none";
-            }
-        });
-
-        // Smooth scroll to top
-        backToTopBtn.addEventListener("click", () => {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-
-
-
-        //   More data
-
-
-        const btn1 = document.getElementById("showMoreBtn1");
-        const extra1 = document.getElementById("extraContent1");
-        const btn2 = document.getElementById("showMoreBtn2");
-        const extra2 = document.getElementById("extraContent2");
-        const btn3 = document.getElementById("showMoreBtn3");
-        const extra3 = document.getElementById("extraContent3");
-        const btn4 = document.getElementById("showMoreBtn4");
-        const extra4 = document.getElementById("extraContent4");
-        const btn5 = document.getElementById("showMoreBtn5");
-        const extra5 = document.getElementById("extraContent5");
-        const btn6 = document.getElementById("showMoreBtn6");
-        const extra6 = document.getElementById("extraContent6");
-
-
-
-        btn1.addEventListener("click", () => {
-            if (extra1.style.display === "none") {
-                extra1.style.display = "block";
-                btn1.textContent = "Show Less";
-            } else {
-                extra1.style.display = "none";
-                btn1.textContent = "Show More";
-            }
-        });
-        btn2.addEventListener("click", () => {
-            if (extra2.style.display === "none") {
-                extra2.style.display = "block";
-                btn2.textContent = "Show Less";
-            } else {
-                extra2.style.display = "none";
-                btn2.textContent = "Show More";
-            }
-        });
-
-        btn3.addEventListener("click", () => {
-            if (extra3.style.display === "none") {
-                extra3.style.display = "block";
-                btn3.textContent = "Show Less";
-            } else {
-                extra3.style.display = "none";
-                btn3.textContent = "Show More";
-            }
-        });
-
-        btn4.addEventListener("click", () => {
-            if (extra4.style.display === "none") {
-                extra4.style.display = "block";
-                btn4.textContent = "Show Less";
-            } else {
-                extra4.style.display = "none";
-                btn4.textContent = "Show More";
-            }
-        });
-
-        btn5.addEventListener("click", () => {
-            if (extra5.style.display === "none") {
-                extra5.style.display = "block";
-                btn5.textContent = "Show Less";
-            } else {
-                extra5.style.display = "none";
-                btn5.textContent = "Show More";
-            }
-        });
-
-        btn6.addEventListener("click", () => {
-            if (extra6.style.display === "none") {
-                extra6.style.display = "block";
-                btn6.textContent = "Show Less";
-            } else {
-                extra6.style.display = "none";
-                btn6.textContent = "Show More";
-            }
-        });
-    </script>
-
+    <!-- Highlight.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="notes.js"></script>
+    
 </body>
 
 </html>

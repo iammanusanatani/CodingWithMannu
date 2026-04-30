@@ -1,0 +1,1934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ CodingWithMannu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Highlight.js CSS theme -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="notes.css">
+    <link rel="stylesheet" href="footer.css">
+</head>
+
+<body>
+    <header>
+        <h2>C++ Programming Language</h2>
+        <button class="toggle-btn" onclick="toggleDarkMode()" title="Dark Mode">🌙</button>
+    </header>
+    <main>
+        <div class="container content">
+
+            <section>
+                <h3>Introduction</h3>
+                <p>C++ is a general-purpose, object-oriented programming language developed by Bjarne Stroustrup in
+                    1979. It extends the C language with features like classes, inheritance, polymorphism, and
+                    templates.</p>
+            </section>
+
+            <section>
+                <h3>What is C++?</h3>
+                <p>C++ is widely used for system programming, operating systems, game engines, and applications
+                    requiring high performance. It balances low-level memory control with high-level abstractions.</p>
+            </section>
+
+            <section>
+                <h3>Why Learn C++?</h3>
+
+                <h3>1. Foundation of Modern Programming</h3>
+                <p><strong>Definition:</strong> C++ is one of the oldest yet most powerful programming languages,
+                    forming the basis of many modern languages and systems.</p>
+                <p><strong>Explanation:</strong> Learning C++ gives you a strong grasp of programming fundamentals like
+                    memory management, object-oriented design, and efficient algorithms. Once you understand C++, other
+                    languages (like Java, Python, or Rust) feel easier.</p>
+
+                <h3>2. Performance & Efficiency</h3>
+                <p><strong>Definition:</strong> C++ is a compiled language that provides direct control over hardware
+                    and memory.</p>
+                <p><strong>Explanation:</strong> Unlike interpreted languages, C++ programs run extremely fast and are
+                    used in performance-critical applications such as operating systems, game engines, and financial
+                    systems.</p>
+
+                <h3>3. Object-Oriented Programming (OOP)</h3>
+                <p><strong>Definition:</strong> OOP is a paradigm that organizes code into classes and objects.</p>
+                <p><strong>Explanation:</strong> C++ introduced OOP features like encapsulation, inheritance, and
+                    polymorphism. These concepts are essential for building scalable, maintainable software.</p>
+
+                <h3>4. System-Level Programming</h3>
+                <p><strong>Definition:</strong> System programming involves writing software that interacts closely with
+                    hardware and operating systems.</p>
+                <p><strong>Explanation:</strong> C++ allows low-level memory manipulation using pointers, making it
+                    ideal for embedded systems, device drivers, and OS kernels.</p>
+
+                <h3>5. Standard Template Library (STL)</h3>
+                <p><strong>Definition:</strong> STL is a collection of pre-written classes and functions for data
+                    structures and algorithms.</p>
+                <p><strong>Explanation:</strong> With STL, you can quickly implement vectors, maps, sets, and algorithms
+                    like sorting and searching without writing them from scratch.</p>
+
+                <h3>6. Industry Demand</h3>
+                <p><strong>Definition:</strong> C++ remains one of the most in-demand languages in industries requiring
+                    high performance.</p>
+                <p><strong>Explanation:</strong> Fields like game development (Unreal Engine), finance (quantitative
+                    trading systems), and robotics heavily rely on C++.</p>
+
+                <h3>7. Gateway to Competitive Programming</h3>
+                <p><strong>Definition:</strong> Competitive programming is solving algorithmic problems under time
+                    constraints.</p>
+                <p><strong>Explanation:</strong> C++ is the most popular language in competitive programming because of
+                    its speed, STL support, and flexibility.</p>
+
+                <h3>8. Longevity & Community</h3>
+                <p><strong>Definition:</strong> C++ has been evolving for decades with modern standards (C++11, C++14,
+                    C++17, C++20).</p>
+                <p><strong>Explanation:</strong> A massive global community ensures continuous updates, libraries, and
+                    support, making it a safe long-term investment for learners.</p>
+
+                <p><strong>Conclusion:</strong> Learning C++ gives you deep control, strong fundamentals, and access to
+                    high-performance applications. It’s like learning the “engine room” of programming before moving to
+                    higher-level languages.</p>
+            </section>
+
+            <section class="quick-links">
+                <details>
+                    <summary style="cursor: pointer;"><strong>Quick Links</strong></summary>
+                    <div class="card">
+                        <h3>Key Topics</h3>
+                        <ul>
+                            <li><a href="#examples">Examples</a></li>
+                            <li><a href="#abstraction">Abstraction in C++</a></li>
+                            <li><a href="#encapsulation">Encapsulation in C++</a></li>
+                            <li><a href="#inheritance">Inheritance in C++</a></li>
+                            <li><a href="#polymorphism">Polymorphism in C++</a></li>
+                            <li><a href="#DiffbCandC++">Difference between C and C++</a></li>
+                            <li><a href="#classesAndobjects">Classes and Objects in C++</a></li>
+                            <li><a href="#informationHiding">Information Hiding</a></li>
+                            <li><a href="#abstractdataType">Abstract Data Types</a></li>
+                            <li><a href="#attributes">Attributes</a></li>
+                            <li><a href="#methods">Methods</a></li>
+                            <li><a href="#classDeclaration">Class Declaration</a></li>
+                            <li><a href="#objectIdentityState&Behavior">Object Identity, State & Behavior</a></li>
+                            <li><a href="#constructors">Constructors</a></li>
+                            <li><a href="#destructor">Destructor</a></li>
+                            <li><a href="#instantiation">Instantiation of Objects</a></li>
+                            <li><a href="#default-parameters">Default Parameter Values</a></li>
+                            <li><a href="#object-types">Object Types</a></li>
+                            <li><a href="#garbage-collection">C++ Garbage Collection</a></li>
+                            <li><a href="#dynamic-allocation">Dynamic Memory Allocation</a></li>
+                            <li><a href="#abstract-classes">Abstract Classes & Metaclasses</a></li>
+                            <li><a href="#Inheritance-and-Class-Hierarchy">Inheritance and Class Hierarchy</a></li>
+                            <li><a href="#Aggregation-Composition-and-Classification">Aggregation, Composition, and Classification</a></li>
+                            <li><a href="#Polymorphism-Techniques">Polymorphism Techniques</a></li>
+                            <li><a href="#GenericFunctions">Generic Functions</a></li>
+                            <li><a href="#FunctionNameOverloading">Function Name Overloading</a></li>
+                            <li><a href="#OverridingInheritanceMethods">Overriding Inheritance Methods</a></li>
+                            <li><a href="#Run-timePolymorphism">Run-time Polymorphism</a></li>
+                            <li><a href="#MultipleInheritance">Multiple Inheritance</a></li>
+                            <li><a href="#Streams and Files">Streams and Files</a></li>
+                            <li><a href="#Namespaces">Namespaces</a></li>
+                            <li><a href="#Exception Handling">Exception Handling</a></li>
+                            <li><a href="#GenericClasses">Generic Classes</a></li>
+                            <li><a href="#ReferenceGuide">Reference Guide</a></li>
+                        </ul>
+                    </div>
+                </details>
+            </section>
+
+            <section id="examples">
+                <h3>Example Code</h3>
+
+                <section id="example">
+                    <h3>Example 1: Hello World Program</h3>
+                    <div class="code-container code-section">
+                        <div class="code-header" onclick="toggleCode(this)">
+                            <span><strong>C++</strong></span>
+                            <button onclick="copyCode(event)">Copy</button>
+                        </div>
+                        <pre><code class="language-cpp">#include &lt;iostream&gt;
+
+using namespace std;
+
+int main() {
+    cout &lt;&lt; "Hello, World!" &lt;&lt; endl;
+    return 0;
+}</code></pre>
+                    </div>
+                    <p><strong>Definition:</strong> <code>#include &lt;iostream&gt;</code> imports the input/output
+                        stream library.</p>
+                    <p><strong>Explanation:</strong> <code>cout</code> prints text to the console. <code>endl</code>
+                        adds a new line. Every C++ program must have a <code>main()</code> function.</p>
+                </section>
+
+                <section>
+                    <h3>Example 2: Variables and Input</h3>
+                    <div class="code-container">
+                        <div class="code-container code-section">
+                            <div class="code-header" onclick="toggleCode(this)">
+                                <span><strong>C++</strong></span>
+                                <button onclick="copyCode(event)">Copy</button>
+                            </div>
+                            <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+    int age;
+    cout &lt;&lt; "Enter your age: ";
+    cin &gt;&gt; age;
+    cout &lt;&lt; "You are " &lt;&lt; age &lt;&lt; " years old." &lt;&lt; endl;
+    return 0;
+}</code></pre>
+                        </div>
+                        <p><strong>Definition:</strong> <code>cin</code> is used for input.</p>
+                        <p><strong>Explanation:</strong> This program asks the user for their age and prints it back.
+                        </p>
+                </section>
+
+                <section>
+                    <h3>Example 3: Functions</h3>
+                    <div class="code-container">
+                        <div class="code-container code-section">
+                            <div class="code-header" onclick="toggleCode(this)">
+                                <span><strong>C++</strong></span>
+                                <button onclick="copyCode(event)">Copy</button>
+                            </div>
+                            <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5, 3);
+    cout &lt;&lt; "Sum = " &lt;&lt; result &lt;&lt; endl;
+    return 0;
+}</code></pre>
+                        </div>
+                        <p><strong>Definition:</strong> A function is a reusable block of code.</p>
+                        <p><strong>Explanation:</strong> Here, <code>add()</code> takes two integers and returns their
+                            sum.
+                        </p>
+                </section>
+
+                <section>
+                    <h3>Example 4: Object-Oriented Programming</h3>
+                    <div class="code-container">
+                        <div class="code-container code-section">
+                            <div class="code-header" onclick="toggleCode(this)">
+                                <span><strong>C++</strong></span>
+                                <button onclick="copyCode(event)">Copy</button>
+                            </div>
+                            <pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+
+class Student {
+public:
+    string name;
+    int age;
+
+    void display() {
+        cout &lt;&lt; "Name: " &lt;&lt; name &lt;&lt; ", Age: " &lt;&lt; age &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.name = "Manu";
+    s1.age = 20;
+    s1.display();
+    return 0;
+}</code></pre>
+                        </div>
+                        <p><strong>Definition:</strong> A class is a blueprint; an object is its instance.</p>
+                        <p><strong>Explanation:</strong> This program defines a <code>Student</code> class and creates
+                            an
+                            object <code style="font-weight: 800;">s1</code> to store and display data.</p>
+                </section>
+            </section>
+
+            <!-- Abstraction in C++ -->
+
+            <section id="abstraction">
+                <h2>Abstraction in C++</h2>
+                <h3>What is Abstraction in C++?</h3>
+                <p><strong>Definition:</strong> Abstraction is the process of exposing only necessary details to the
+                    user and hiding the background implementation.</p>
+                <p><strong>Purpose:</strong> Simplifies code, improves maintainability, and enhances modularity.</p>
+                <p><strong>Real-life Analogy:</strong>Driving a car—you know how to use the steering wheel,
+                    accelerator, and brakes, but you don’t need to know the internal mechanics of how they work.</p>
+                <div id="extraContent1" style="display:none;">
+                    <section>
+                        <h3>Types of Abstraction in C++</h3>
+                        <h3>1. Data Abstraction</h3>
+                        <ul>
+                            <li>Achieved using classes with private data members and public methods.</li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <pre><code class="language-cpp">
+class Student {
+private:
+    int marks;   // hidden data
+public:
+    void setMarks(int m) { marks = m; }
+    int getMarks() { return marks; }
+};
+    </code></pre>
+                        <p>Here, <strong>marks</strong> is hidden, and only controlled access is provided through
+                            <strong>setMarks()</strong> and <strong>getMarks()</strong>.
+                        </p>
+
+                        <h3>2. Control Abstraction</h3>
+                        <ul>
+                            <li>Achieved using <strong>functions</strong> and <strong>abstract classes</strong>.</li>
+                            <li>Focuses on hiding the implementation of operations while exposing only the interface.
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>How Abstraction is Implemented?</h3>
+                        <ul>
+                            <li><strong>Access Specifiers:</strong> <code style="color: rgb(234, 5, 5);">private</code>
+                                hides details, <code style="color: rgb(234, 5, 5);">public</code>
+                                exposes necessary methods.</li>
+                            <li><strong>Abstract Classes:</strong> A class with at least one pure virtual function.</li>
+
+                            <pre><code class="language-cpp">
+class Shape {
+public:
+    virtual double area() = 0;  // pure virtual function
+};
+
+class Rectangle : public Shape {
+    double length, width;
+public:
+    Rectangle(double l, double w) : length(l), width(w) {}
+    double area() override { return length * width; }
+};
+    </code></pre>
+                            <p><strong>Shape</strong> defines what must be done (<strong>area()</strong>), while
+                                <strong>Rectangle</strong> defines how it is done.
+                            </p>
+                            <li><strong>Interfaces (Full Abstraction):</strong></li>
+                            <ul>
+                                <li>A class with only pure virtual functions and no data members.</li>
+                                <li>Forces all derived classes to implement every function.</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Benefits of Abstraction</h3>
+                        <ul>
+                            <li><strong>Encapsulation of complexity:</strong> Users interact with simple interfaces.
+                            </li>
+                            <li><strong>Improved maintainability:</strong> Internal changes don’t affect external code.
+                            </li>
+                            <li><strong>Flexibility & scalability:</strong> Easier to extend systems with new classes.
+                            </li>
+                            <li><strong>Security:</strong> Sensitive data can be hidden from direct access.</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>Comparison Table</h3>
+                        <table border="1" cellpadding="6">
+                            <tr>
+                                <th>Feature</th>
+                                <th>Data Abstraction</th>
+                                <th>Control Abstraction</th>
+                            </tr>
+                            <tr>
+                                <td>Focus</td>
+                                <td>Hides data</td>
+                                <td>Hides implementation logic</td>
+                            </tr>
+                            <tr>
+                                <td>Achieved By</td>
+                                <td>Classes, access specifiers</td>
+                                <td>Functions, abstract classes</td>
+                            </tr>
+                            <tr>
+                                <td>Example</td>
+                                <td>Student class with private marks</td>
+                                <td>Shape class with pure virtual <code>area()</code></td>
+                            </tr>
+                            <tr>
+                                <td>Use Case</td>
+                                <td>Protecting sensitive data</td>
+                                <td>Defining common interfaces</td>
+                            </tr>
+                        </table>
+                    </section>
+                </div>
+                <!-- Button -->
+                <button id="showMoreBtn1" class="showReadBtn">Read More</button>
+            </section>
+
+            <!-- Encapsulation in C++ -->
+
+            <section id="encapsulation">
+                <h2>Encapsulation in C++</h2>
+                <h3>What is Encapsulation in C++?</h3>
+                <p><strong>Definition:</strong> Encapsulation is one of the <strong>core principles of Object-Oriented
+                        Programming (OOP)</strong> in C++. It refers to <strong>wrapping data (variables) and methods
+                        (functions) together into a single unit called a class</strong>, while restricting direct access
+                    to the internal details.</p>
+                <p><strong style="color: rgb(245, 190, 53);">Encapsulation</strong> in C++ means <strong>binding data
+                        and the code that manipulates it together</strong> and controlling access using <strong>access
+                        specifiers</strong> ( <code style="color:rgb(234, 5, 5);">private, protected, public</code> ).
+                </p>
+                <ul>
+                    <li><strong>Private/Protected members</strong> → hidden from outside interference.</li>
+                    <li><strong>Public methods</strong> → provide controlled access to the hidden data.</li>
+                </ul>
+                <h3>Purpose</h3>
+                <ul>
+                    <li>Protects data from accidental modification.</li>
+                    <li>Provides a clean interface for interaction.</li>
+                    <li>Improves modularity and maintainability.</li>
+                    <li>Ensures security by hiding sensitive details.</li>
+                </ul>
+                <div id="extraContent2" style="display: none;">
+                    <section>
+                        <h3>Example of Encapsulation</h3>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt; 
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;  // hidden data
+
+public:
+    BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    void deposit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if(amount <= balance) balance -= amount;
+        else cout << "Insufficient funds!" << endl;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount account(1000);   // create account with initial balance
+    account.deposit(500);        // controlled access
+    account.withdraw(200);
+    cout << "Current Balance: " << account.getBalance() << endl;
+    return 0;
+}
+
+                        </code></pre>
+                        </div>
+
+                        <h3>Key Points in Example</h3>
+                        <ul>
+                            <li><strong>balance</strong> is <code style="color:rgb(234, 5, 5);">private</code> → cannot
+                                be accessed directly outside the class.</li>
+                            <li><strong>deposit(), withdraw(), and getBalance()</strong> are <code
+                                    style="color:rgb(234, 5, 5);">public </code>methods → provide controlled </li>
+                            <li>This ensures <strong>data safety</strong> and <strong>controlled modification</strong>.
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h3>Benefits of Encapsulation</h3>
+                        <ul>
+                            <li><strong>Data Hiding:</strong> Prevents unauthorized access.</li>
+                            <li><strong>Flexibility:</strong> Internal implementation can change without affecting
+                                external code.</li>
+                            <li><strong>Reusability:</strong> Classes can be reused in different programs.</li>
+                            <li><strong>Security:</strong> Sensitive data is protected.</li>
+                        </ul>
+                    </section>
+                    <section>
+                        <p>✅ <strong>In short:</strong> Encapsulation in C++ is about <strong>hiding the internal
+                                details of a class and exposing only necessary functionality through public
+                                methods.</strong> It makes programs more secure, modular, and easier to maintain.</p>
+                    </section>
+                </div>
+                <!-- Button -->
+                <button id="showMoreBtn2" class="showReadBtn">Read More</button>
+
+            </section>
+
+            <!-- Inheritance in C++ -->
+
+            <section id="inheritance">
+
+                <h2>Inheritance in C++</h2>
+                <h3>What is Inheritance in C++</h3>
+                <p><strong>Definition:</strong> Inheritance is a <strong>fundamental concept of Object-Oriented
+                        Programming (OOP)</strong> that allows one class
+                    (called the <strong>derived class</strong>) to acquire the properties and behaviors of another class
+                    (called the <strong>base class</strong>).</p>
+                <p>It promotes code reusability and hierarchical
+                    classification.</p>
+                <p><strong style="color: cornflowerblue;">Inheritance</strong> in C++ is the process by which <strong>a
+                        new class is created from an existing class</strong>, enabling
+                    the derived class to <strong>reuse and extend</strong> the functionality of the base class.</p>
+                <pre><code class="language-cpp">
+class DerivedClass : access_specifier BaseClass {
+    // additional members
+};
+  </code></pre>
+                <h3>Basic Example</h3>
+                <div class="code-container">
+                    <button class="copy-btn">Copy</button>
+                    <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class Animal {
+public:
+    void eat() {
+        cout << "Eating..." << endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        cout << "Barking..." << endl;
+    }
+};
+
+int main() {
+    Dog d;
+    d.eat();   // inherited from Animal
+    d.bark();  // defined in Dog
+    return 0;
+}
+</code></pre>
+                </div>
+
+                <div id="extraContent3" style="display: none;">
+                    <section>
+                        <h3>Types of Inheritance in C++</h3>
+                        <table>
+                            <tr>
+                                <th>Type</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                            <tr>
+                                <td>Single Inheritance</td>
+                                <td>One derived class inherits from one base class.</td>
+                                <td><code>class B : public A { };</code></td>
+                            </tr>
+                            <tr>
+                                <td>Multiple Inheritance</td>
+                                <td>One derived class inherits from more than one base class.</td>
+                                <td><code>class C : public A, public B { };</code></td>
+                            </tr>
+                            <tr>
+                                <td>Multilevel Inheritance</td>
+                                <td>A class is derived from another derived class.</td>
+                                <td><code>class C : public B; class B : public A;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Hierarchical Inheritance</td>
+                                <td>Multiple classes inherit from a single base class.</td>
+                                <td><code>class B : public A; class C : public A;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Hybrid Inheritance</td>
+                                <td>Combination of two or more types of inheritance.</td>
+                                <td>Mix of multiple + multilevel.</td>
+                            </tr>
+                        </table>
+                        <div><img src="img/inheritanceimg.png" alt="Single Inheritance"></div>
+                    </section>
+
+                    <section>
+                        <h3>1. Single Inheritance</h3>
+                        <p>A derived class inherits from only one base class.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class Parent {
+public:
+    void display() {
+        cout << "Parent class function" << endl;
+    }
+};
+
+class Child : public Parent {
+public:
+    void show() {
+        cout << "Child class function" << endl;
+    }
+};
+
+int main() {
+    Child obj;
+    obj.display();
+    obj.show();
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </section>
+                    <section>
+                        <h3>2. Multiple Inheritance</h3>
+                        <p>A derived class inherits from more than one base class.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class A {
+public:
+    void msgA() { cout << "Class A" << endl; }
+};
+
+class B {
+public:
+    void msgB() { cout << "Class B" << endl; }
+};
+
+class C : public A, public B {
+public:
+    void msgC() { cout << "Class C" << endl; }
+};
+
+int main() {
+    C obj;
+    obj.msgA();
+    obj.msgB();
+    obj.msgC();
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </section>
+
+
+                    <section>
+                        <h3>3. Multilevel Inheritance</h3>
+                        <p>A class is derived from another derived class (a chain of inheritance).</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class GrandParent {
+public:
+    void funcGP() { cout << "GrandParent class" << endl; }
+};
+
+class Parent : public GrandParent {
+public:
+    void funcP() { cout << "Parent class" << endl; }
+};
+
+class Child : public Parent {
+public:
+    void funcC() { cout << "Child class" << endl; }
+};
+
+int main() {
+    Child obj;
+    obj.funcGP();
+    obj.funcP();
+    obj.funcC();
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>4. Hierarchical Inheritance</h3>
+                        <p>Multiple derived classes inherit from a single base class.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class Base {
+public:
+    void showBase() { cout << "Base class" << endl; }
+};
+
+class Derived1 : public Base {
+public:
+    void showD1() { cout << "Derived1 class" << endl; }
+};
+
+class Derived2 : public Base {
+public:
+    void showD2() { cout << "Derived2 class" << endl; }
+};
+
+int main() {
+    Derived1 d1;
+    Derived2 d2;
+    d1.showBase();
+    d2.showBase();
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>5. Hybrid Inheritance</h3>
+                        <p>A combination of two or more types of inheritance (e.g., multiple + hierarchical).
+                            This often leads to the diamond problem.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code >#include &lt;iostream&gt;
+using namespace std;
+
+class A {
+public:
+    void msgA() { cout << "Class A" << endl; }
+};
+
+class B : public A {
+public:
+    void msgB() { cout << "Class B" << endl; }
+};
+
+class C {
+public:
+    void msgC() { cout << "Class C" << endl; }
+};
+
+class D : public B, public C {
+public:
+    void msgD() { cout << "Class D" << endl; }
+};
+
+int main() {
+    D obj;
+    obj.msgA();
+    obj.msgB();
+    obj.msgC();
+    obj.msgD();
+    return 0;
+}
+</code></pre>
+                        </div>
+                    </section>
+
+
+
+                    <section>
+                        <h3>Key Advantages</h3>
+                        <ul>
+                            <li>Code Reusability</li>
+                            <li>Reduced Redundancy</li>
+                            <li>Improved Maintainability</li>
+                            <li>Logical Hierarchy Representation</li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- Button -->
+                <button id="showMoreBtn3" class="showReadBtn">Read More</button>
+            </section>
+
+            <!-- Polymorphism in C++ -->
+
+            <section id="polymorphism">
+                <h2>Polymorphism in C++</h2>
+                <h3>What is Polymorphism in C++</h3>
+                <p>Polymorphism is one of the four pillars of Object-Oriented Programming (OOP) in C++. It means
+                    <strong>“many forms”</strong> — allowing the same function or operator to behave differently based
+                    on the context.
+                </p>
+                <p>Polymorphism in C++ is the ability of a function, method, or operator to take multiple forms
+                    depending on the type of object or arguments involved. It enables code flexibility, reusability, and
+                    dynamic behavior.</p>
+                <div id="extraContent4" style="display: none;">
+                    <h3>Types of Polymorphism in C++</h3>
+                    <table>
+                        <tr>
+                            <th>Type</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>Compile-time Polymorphism</td>
+                            <td>Achieved during compilation using function overloading or operator overloading.</td>
+                            <td>Function Overloading, Operator Overloading</td>
+                        </tr>
+                        <tr>
+                            <td>Run-time Polymorphism</td>
+                            <td>Achieved during program execution using virtual functions and inheritance.</td>
+                            <td>Virtual Functions</td>
+                        </tr>
+                    </table>
+
+
+                    <section>
+                        <h3>1. Compile-time Polymorphism</h3>
+                        <h4>(a) Function Overloading</h4>
+                        <p>Multiple functions with the same name but different parameter lists.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Print {
+public:
+    void show(int i) {
+        cout &lt;&lt; "Integer: " &lt;&lt; i &lt;&lt; endl;
+    }
+    void show(double d) {
+        cout &lt;&lt; "Double: " &lt;&lt; d &lt;&lt; endl;
+    }
+    void show(string s) {
+        cout &lt;&lt; "String: " &lt;&lt; s &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Print p;
+    p.show(10);
+    p.show(3.14);
+    p.show("Hello C++");
+    return 0;
+}
+  </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h4>(b) Operator Overloading</h4>
+                        <p>Redefining the behavior of operators for user-defined types.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Complex {
+    int real, imag;
+public:
+    Complex(int r=0, int i=0) { real = r; imag = i; }
+
+    Complex operator + (Complex const &obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+
+    void display() {
+        cout &lt;&lt; real &lt;&lt; " + " &lt;&lt; imag &lt;&lt; "i" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Complex c1(3, 4), c2(1, 2);
+    Complex c3 = c1 + c2;
+    c3.display();
+    return 0;
+}
+  </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>2. Run-time Polymorphism</h3>
+                        <h4>Virtual Functions</h4>
+                        <p>Allows derived classes to override base class methods dynamically.</p>
+                        <div class="code-container">
+                            <button class="copy-btn">Copy</button>
+                            <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Base {
+public:
+    virtual void show() {
+        cout &lt;&lt; "Base class show()" &lt;&lt; endl;
+    }
+};
+
+class Derived : public Base {
+public:
+    void show() override {
+        cout &lt;&lt; "Derived class show()" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Base* bptr;
+    Derived d;
+    bptr = &d;
+    bptr-&gt;show();  // Calls Derived's version
+    return 0;
+}
+  </code></pre>
+                        </div>
+                    </section>
+
+                    <section>
+                        <h3>Key Differences</h3>
+                        <table>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Compile-time Polymorphism</th>
+                                <th>Run-time Polymorphism</th>
+                            </tr>
+                            <tr>
+                                <td>Binding Time</td>
+                                <td>At compile time</td>
+                                <td>At runtime</td>
+                            </tr>
+                            <tr>
+                                <td>Techniques</td>
+                                <td>Function & Operator Overloading</td>
+                                <td>Virtual Functions</td>
+                            </tr>
+                            <tr>
+                                <td>Speed</td>
+                                <td>Faster</td>
+                                <td>Slightly slower</td>
+                            </tr>
+                            <tr>
+                                <td>Flexibility</td>
+                                <td>Limited</td>
+                                <td>High</td>
+                            </tr>
+                            <tr>
+                                <td>Inheritance Required</td>
+                                <td>No</td>
+                                <td>Yes</td>
+                            </tr>
+                        </table>
+                    </section>
+
+                    <section>
+                        <h3>Advantages</h3>
+                        <ul>
+                            <li>Code Reusability</li>
+                            <li>Flexibility and Scalability</li>
+                            <li>Easier Maintenance</li>
+                            <li>Supports Dynamic Behavior</li>
+                        </ul>
+                    </section>
+                </div>
+                <!-- Button -->
+                <button id="showMoreBtn4" class="showReadBtn">Read More</button>
+            </section>
+
+            <!-- Difference between C and C++ -->
+
+            <section id="DiffbCandC++">
+                <h2>Difference between C and C++</h2>
+                <h3>Review of C</h3>
+                <p>C Language is a <strong>procedural programming language</strong> developed in the 1970s.
+                    It focuses on functions and procedures rather than objects.</p>
+                <ul>
+                    <li>Structured programming (functions, loops, conditionals)</li>
+                    <li>Manual memory management using <code>malloc()</code> and <code>free()</code></li>
+                    <li>Input/Output handled by <code>printf()</code> and <code>scanf()</code></li>
+                    <li>No built-in support for OOP concepts like classes, inheritance, or polymorphism</li>
+                </ul>
+
+                <h3>Difference between C and C++</h3>
+                <table>
+                    <tr>
+                        <th>Feature</th>
+                        <th>C</th>
+                        <th>C++</th>
+                    </tr>
+                    <tr>
+                        <td>Paradigm</td>
+                        <td>Procedural</td>
+                        <td>Procedural + Object-Oriented</td>
+                    </tr>
+                    <tr>
+                        <td>Input/Output</td>
+                        <td><code>printf</code>, <code>scanf</code></td>
+                        <td><code>cin</code>, <code>cout</code></td>
+                    </tr>
+                    <tr>
+                        <td>Memory Management</td>
+                        <td><code>malloc</code>, <code>free</code></td>
+                        <td><code>new</code>, <code>delete</code></td>
+                    </tr>
+                    <tr>
+                        <td>Data & Functions</td>
+                        <td>Separate</td>
+                        <td>Encapsulated in classes</td>
+                    </tr>
+                    <tr>
+                        <td>Operators</td>
+                        <td>Fixed meaning</td>
+                        <td>Supports operator overloading</td>
+                    </tr>
+                    <tr>
+                        <td>OOP Concepts</td>
+                        <td>Not supported</td>
+                        <td>Supported (Abstraction, Encapsulation, Inheritance, Polymorphism)</td>
+                    </tr>
+                </table>
+
+                <h3>Examples</h3>
+
+                <h3>1. Input/Output</h3>
+                <div>
+                    <h4>C</h4>
+                    <pre><code class="language-c">
+#include &lt;stdio.h&gt;
+int main() {
+    int x;
+    printf("Enter a number: ");
+    scanf("%d", &x);
+    printf("You entered: %d", x);
+    return 0;
+}
+    </code></pre>
+                </div>
+
+                <div>
+                    <h4>C++</h4>
+                    <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int x;
+    cout &lt;&lt; "Enter a number: ";
+    cin &gt;&gt; x;
+    cout &lt;&lt; "You entered: " &lt;&lt; x;
+    return 0;
+}
+    </code></pre>
+                </div>
+                <h3>2. Memory Management</h3>
+                <div>
+                    <h4>C</h4>
+                    <pre><code class="language-c">
+#include &lt;stdlib.h&gt;
+int main() {
+    int* arr = (int*)malloc(5 * sizeof(int));
+    arr[0] = 10;
+    free(arr);
+    return 0;
+}
+    </code></pre>
+                </div>
+
+                <div>
+                    <h4>C++</h4>
+                    <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+int main() {
+    int* arr = new int[5];
+    arr[0] = 10;
+    delete[] arr;
+    return 0;
+}
+    </code></pre>
+                </div>
+
+                <h3>3. Operator Overloading (Only in C++)</h3>
+                <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Complex {
+    int real, imag;
+public:
+    Complex(int r=0, int i=0) { real = r; imag = i; }
+    Complex operator + (Complex const &obj) {
+        return Complex(real + obj.real, imag + obj.imag);
+    }
+    void display() {
+        cout &lt;&lt; real &lt;&lt; " + " &lt;&lt; imag &lt;&lt; "i" &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Complex c1(2, 3), c2(1, 4);
+    Complex c3 = c1 + c2;
+    c3.display();
+    return 0;
+}
+  </code></pre>
+
+                <h3>Summary</h3>
+                <p><strong>C</strong> is procedural, focuses on functions, and uses manual memory management.<br>
+                    <strong>C++</strong> extends C with Object-Oriented Programming, introduces <code>cin</code>,
+                    <code>cout</code>, <code>new</code>, <code>delete</code>, and supports operator overloading.
+                </p>
+
+            </section>
+
+            <!-- Classes and Objects in C++ -->
+
+            <section id="classesAndobjects">
+                <h2>Classes and Objects in C++</h2>
+                <p>Classes and objects are the foundation of <strong>Object-Oriented Programming (OOP)</strong> in C++.
+                    A class is a <em>blueprint</em> that defines attributes and behaviors, while an object is an
+                    <em>instance</em> of that class.
+                </p>
+                <h3>Classes</h3>
+                <p>A <strong>class</strong> contains data members (variables) and member functions (methods).
+                    Think of it as a design plan.</p>
+
+                <h3>Object</h3>
+                <p>An <strong>object</strong> is created from a class and represents a real-world entity.
+                    If the class is the blueprint, the object is the actual product.</p>
+
+
+                <div id="extraContent5" style="display: none;">
+                    <h2>Example: Class & Object</h2>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class Car {
+public:
+    string brand;
+    int year;
+
+    void display() {
+        cout &lt;&lt; "Brand: " &lt;&lt; brand &lt;&lt; ", Year: " &lt;&lt; year &lt;&lt; endl;
+    }
+};
+
+int main() {
+    Car car1;           // object creation
+    car1.brand = "Tesla";
+    car1.year = 2024;
+
+    car1.display();     // accessing class method
+    return 0;
+}
+    </code></pre>
+                    </div>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+
+
+                    <h2>Encapsulation</h2>
+                    <p><a href="#encapsulation"
+                            style="text-decoration: none; color: black; font-weight: 700;">Encapsulation</a> means
+                        bundling data and methods together, with controlled access using
+                        <code>public</code>, <code>private</code>, and <code>protected</code> specifiers.
+                    </p>
+                    <h3>Example: Encapsulation</h3>
+                    <div class="code-container">
+                        <button class="copy-btn">Copy</button>
+                        <pre><code class="language-cpp">
+#include &lt;iostream&gt;
+using namespace std;
+
+class BankAccount {
+private:
+    double balance;  // hidden data
+
+public:
+    BankAccount(double initialBalance) {
+        balance = initialBalance;
+    }
+
+    void deposit(double amount) {
+        if(amount > 0) balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if(amount <= balance) balance -= amount;
+        else cout &lt;&lt; "Insufficient funds!" &lt;&lt; endl;
+    }
+
+    double getBalance() {
+        return balance;
+    }
+};
+
+int main() {
+    BankAccount account(1000);   // object with initial balance
+    account.deposit(500);
+    account.withdraw(200);
+    cout &lt;&lt; "Current Balance: " &lt;&lt; account.getBalance() &lt;&lt; endl;
+    return 0;
+}
+    </code></pre>
+                    </div>
+                    <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                    <h3>Key Points</h3>
+                    <ul>
+                        <li><strong>Class</strong> → Blueprint (attributes & behaviors)</li>
+                        <li><strong>Object</strong> → Instance of a class</li>
+                        <li><strong>Encapsulation</strong> → Protects data by hiding internal details</li>
+                    </ul>
+                </div>
+                <!-- Button -->
+                <button id="showMoreBtn5" class="showReadBtn">Read More</button>
+            </section>
+
+            <!-- Information Hiding -->
+
+            <section id="informationHiding">
+                <h2>Information Hiding</h2>
+
+                <p>Information hiding restricts direct access to internal details of a class.
+                    It is achieved using <code>private</code>, <code>protected</code>, and <code>public</code>
+                    specifiers.
+                    This ensures data security and prevents misuse.</p>
+                <pre><code class="language-cpp">
+class Student {
+private:
+    int marks;   // hidden data
+
+public:
+    void setMarks(int m) {
+        if(m >= 0) marks = m;
+    }
+    int getMarks() {
+        return marks;
+    }
+};
+    </code></pre>
+                </details>
+            </section>
+
+            <!-- Abstract Data Types -->
+
+            <section id="abstractdataType">
+                <h2>Abstract Data Types</h2>
+                <p>An Abstract Data Type (ADT) is defined by its behavior (operations) rather than its implementation.
+                    In C++, classes are used to implement ADTs such as Stack, Queue, and Linked List.</p>
+                <pre><code class="language-cpp">
+class Stack {
+private:
+    int arr[5];
+    int top;
+
+public:
+    Stack() { top = -1; }
+
+    void push(int x) {
+        if(top < 4) arr[++top] = x;
+    }
+
+    int pop() {
+        if(top >= 0) return arr[top--];
+        return -1; // error value
+    }
+};
+    </code></pre>
+                </details>
+            </section>
+
+            <!-- Attributes in C++ -->
+
+            <section id="attributes">
+                <h2>Attributes</h2>
+                <p>Attributes are variables inside a class that represent the state or properties of an object.
+                    Example: <code>brand</code> and <code>year</code> in the Car class.</p>
+            </section>
+
+            <!-- Methods in C++ -->
+            <section id="methods">
+                <h2>Methods</h2>
+                <p>Methods are functions inside a class that define the behavior of an object.</p>
+                <pre><code class="language-cpp">
+class BankAccount {
+private:
+    double balance;
+
+public:
+    BankAccount(double initial) { balance = initial; }
+    void deposit(double amount) { balance += amount; }
+    double getBalance() { return balance; }
+};
+    </code></pre>
+                </details>
+            </section>
+
+            <!--Class Declaration  -->
+
+            <section id="classDeclaration">
+                <h2>Class Declaration</h2>
+                <p>A <strong>class declaration</strong> defines the structure of a class in C++.
+                    It specifies attributes (data members), methods (member functions), and access specifiers.
+                    It acts as a blueprint for creating objects and enforces encapsulation.</p>
+                <pre><code class="language-cpp">
+class Car {
+private:
+    string brand;
+    int year;
+
+public:
+    void setData(string b, int y) {
+        brand = b; year = y;
+    }
+    void display() {
+        cout << brand << " (" << year << ")" << endl;
+    }
+};
+    </code></pre>
+            </section>
+
+            <!-- Object Identity, State & Behavior -->
+            <section id="objectIdentityState&Behavior">
+                <h2>Object Identity, State & Behavior</h2>
+                <ul>
+                    <li><strong>Identity</strong> → Unique reference (object name).</li>
+                    <li><strong>State</strong> → Values stored in attributes.</li>
+                    <li><strong>Behavior</strong> → Actions performed via methods.</li>
+                </ul>
+                <p>Together, these make an object a self-contained unit in OOP.</p>
+                <pre><code class="language-cpp">
+class Car {
+public:
+    string brand;   // state
+    int year;       // state
+
+    void display() {   // behavior
+        cout << brand << " (" << year << ")" << endl;
+    }
+};
+
+int main() {
+    Car c1;   // identity
+    c1.brand = "Tesla";
+    c1.year = 2024;
+    c1.display();
+}
+    </code></pre>
+            </section>
+
+            <!-- Constructors -->
+
+            <section id="constructors">
+                <h2>Constructors</h2>
+                <p>A <strong>constructor</strong> is a special member function used to initialize objects.
+                    It has the same name as the class, no return type, and is called automatically when an object is
+                    created.</p>
+                <p>Types of constructors:</p>
+                <ul>
+                    <li><strong>Default Constructor</strong> → No parameters, initializes with default values.</li>
+                    <li><strong>Parameterized Constructor</strong> → Accepts arguments to initialize attributes.
+                    </li>
+                    <li><strong>Copy Constructor</strong> → Creates a new object as a copy of another.</li>
+                </ul>
+                <details open>
+                    <summary>Default Constructor</summary>
+                    <h3>Example</h3>
+                    <pre><code class="language-cpp">
+class Demo {
+public:
+    Demo() {
+        cout << "Default Constructor called!" << endl;
+    }
+};
+    </code></pre>
+                </details>
+
+                <details open>
+                    <summary>Parameterized Constructor</summary>
+                    <h3>Example</h3>
+                    <pre><code class="language-cpp">
+class Student {
+public:
+    string name;
+    int age;
+
+    Student(string n, int a) {
+        name = n; age = a;
+    }
+};
+    </code></pre>
+
+                </details>
+
+                <details open>
+                    <summary>Copy Constructor</summary>
+                    <h3>Example</h3>
+                    <pre><code class="language-cpp">
+class Box {
+public:
+    int length;
+    Box(int l) { length = l; }
+    Box(const Box &b) { length = b.length; }
+};
+    </code></pre>
+                </details>
+            </section>
+
+            <!-- Destructor -->
+
+            <section id="destructor">
+                <h2>Destructor</h2>
+                <p>A <strong>destructor</strong> is a special member function used to clean up resources when an
+                    object is destroyed.
+                    It has the same name as the class, preceded by <code>~</code>.
+                    It is called automatically when an object goes out of scope.</p>
+                <h3>Example</h3>
+                <pre><code class="language-cpp">
+class Demo {
+public:
+    Demo() { cout << "Constructor called!" << endl; }
+    ~Demo() { cout << "Destructor called!" << endl; }
+};
+
+int main() {
+    Demo d1;   // constructor runs
+}   // destructor runs automatically
+    </code></pre>
+            </section>
+
+            <!-- Instantiation of Objects -->
+
+            <section id="instantiation">
+                <h2>Instantiation of Objects</h2>
+                <p>Instantiation refers to the creation of a runtime instance of a class. In C++, this can occur in two
+                    primary memory areas:</p>
+                <ul>
+                    <li><strong>Stack Allocation:</strong> Memory is managed automatically. The object is destroyed when
+                        it goes out of scope.</li>
+                    <li><strong>Heap Allocation:</strong> Controlled via the <code>new</code> keyword. The developer
+                        must manage the lifecycle.</li>
+                </ul>
+                <pre><code>
+MyClass obj;            // Stack: Automatic
+MyClass* ptr = new MyClass(); // Heap: Manual
+</code></pre>
+            </section>
+
+            <!-- Default Parameter Values -->
+
+            <section id="default-parameters">
+                <h2>Default Parameter Values</h2>
+                <p>C++ allows functions to have default values for arguments. If a value isn't provided by the caller,
+                    the default is used.</p>
+                <div class="note">
+                    <strong>Rule:</strong> Default arguments must be assigned from right to left in the function
+                    signature.
+                </div>
+                <pre><code>
+void display(int width, int height = 100); // Valid
+// void display(int width = 50, int height); // Invalid
+</code></pre>
+            </section>
+
+            <!-- Object Types -->
+            <section id="object-types">
+                <h2>Object Types</h2>
+                <p>Objects are categorized based on their complexity and memory layout:</p>
+                <ul>
+                    <li><strong>POD (Plain Old Data):</strong> Simple structures compatible with C layouts.</li>
+                    <li><strong>Polymorphic Objects:</strong> Classes containing at least one <code>virtual</code>
+                        function. These utilize a <strong>vtable</strong> for dynamic dispatch.</li>
+                </ul>
+            </section>
+
+            <!-- C++ Garbage Collection -->
+            <section id="garbage-collection">
+                <h2>C++ Garbage Collection</h2>
+                <p>C++ does not feature a background Garbage Collector (GC) like Java. Instead, it relies on
+                    <strong>RAII (Resource Acquisition Is Initialization)</strong>.
+                </p>
+                <p>Modern C++ uses <strong>Smart Pointers</strong> (<code>std::unique_ptr</code>,
+                    <code>std::shared_ptr</code>) to automate memory release through reference counting and ownership
+                    logic, providing the benefits of GC without the performance "stop-the-world" overhead.
+                </p>
+            </section>
+
+            <!-- Dynamic Memory Allocation -->
+            <section id="dynamic-allocation">
+                <h2>Dynamic Memory Allocation</h2>
+                <p>Memory requested during execution from the "Heap."</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Stack</th>
+                            <th>Heap</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Allocation</td>
+                            <td>Static/Automatic</td>
+                            <td>Dynamic (Runtime)</td>
+                        </tr>
+                        <tr>
+                            <td>Lifetime</td>
+                            <td>Scope-based</td>
+                            <td>Until <code>delete</code> is called</td>
+                        </tr>
+                        <tr>
+                            <td>Speed</td>
+                            <td>Very Fast</td>
+                            <td>Relatively Slower</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Abstract Classes & Metaclasses -->
+            <section id="abstract-classes">
+                <h2>Abstract Classes & Metaclasses</h2>
+                <h3>Abstract Classes</h3>
+                <p>A class designed to be an interface. It cannot be instantiated and must contain at least one
+                    <strong>pure virtual function</strong>.
+                </p>
+                <code>virtual void signal() = 0;</code>
+
+                <h3>Metaclasses</h3>
+                <p>While C++ doesn't have native metaclasses like Python, it uses <strong>Template Metaprogramming
+                        (TMP)</strong> to generate class definitions at compile-time, serving a similar structural
+                    purpose.</p>
+            </section>
+
+            <!-- Inheritance and Class Hierarchy -->
+            <section id="Inheritance-and-Class-Hierarchy">
+                <h2>Inheritance and Class Hierarchy</h2>
+                <p><strong>Definition:</strong> Inheritance allows a class (Derived Class) to acquire the properties and
+                    methods of another class (Base Class). A <strong>Class Hierarchy</strong> is the resulting tree-like
+                    structure of these relationships.</p>
+
+                <h3>Derivation Modes</h3>
+                <ul>
+                    <li><strong>Public:</strong> Public members of the base class remain public in the derived class.
+                    </li>
+                    <li><strong>Protected:</strong> Public members become protected; protected members remain protected.
+                    </li>
+                    <li><strong>Private:</strong> All members of the base class become private in the derived class.
+                    </li>
+                </ul>
+
+                <pre><code>
+class Employee {
+protected:
+    string name;
+public:
+    Employee(string n) : name(n) {}
+};
+
+class Developer : public Employee {
+public:
+    Developer(string n) : Employee(n) {}
+    void code() { cout << name << " is coding..."; }
+};</code></pre>
+            </section>
+
+            <!-- Aggregation, Composition, and Classification -->
+            <section id="Aggregation-Composition-and-Classification">
+                <h2>Aggregation, Composition, and Classification</h2>
+                <p>These terms define how objects relate to one another beyond simple inheritance.</p>
+
+                <ul>
+                    <li><strong>Classification Hierarchy:</strong> The standard "is-a" relationship (e.g., A Square
+                        <em>is a</em> Shape).
+                    </li>
+                    <li><strong>Aggregation:</strong> A "has-a" relationship where the child can exist independently
+                        (e.g., A University has Professors).</li>
+                    <li><strong>Composition:</strong> A "has-a" relationship where the child's lifecycle depends on the
+                        parent (e.g., A Building has Floors).</li>
+                </ul>
+            </section>
+
+            <!-- Polymorphism Techniques -->
+
+            <section id="Polymorphism-Techniques">
+                <h2>Polymorphism Techniques</h2>
+                <p><strong>Definition:</strong> The ability of a single interface to represent different underlying
+                    forms (data types or functions).</p>
+
+                <h3>Method Polymorphism</h3>
+                <p>Consists of <strong>Overloading</strong> (same name, different parameters) and
+                    <strong>Overriding</strong> (redefining a base method in a child class).
+                </p>
+
+                <h3>Parametric Polymorphism</h3>
+                <p>Also known as Generics or Templates. It allows a function or class to work with any data type without
+                    rewriting code.</p>
+
+                <pre><code>// Template Example
+template &lt;typename T&gt;
+T multiply(T a, T b) {
+    return a * b;
+}</code></pre>
+
+                <h3>Operator Overloading</h3>
+                <p>Defining custom logic for standard operators (like <code>+</code>, <code>-</code>,
+                    <code>&lt;&lt;</code>) when used with user-defined objects.
+                </p>
+            </section>
+
+            <section>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Technique</th>
+                            <th>Binding Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ad-hoc</strong></td>
+                            <td>Overloading</td>
+                            <td>Compile-time</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Inclusion</strong></td>
+                            <td>Overriding (Virtual)</td>
+                            <td>Runtime</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Parametric</strong></td>
+                            <td>Templates</td>
+                            <td>Compile-time</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Generic Functions -->
+
+            <section id="GenericFunctions">
+                <h2>Generic Functions</h2>
+                <p><strong>Definition:</strong> A function that is designed to work with any data type. Instead of
+                    writing separate functions for <code>int,</code> <code>float</code>, and <code>double</code>, you
+                    write one "generic" version.</p>
+                <ul>
+                    <li><strong>Explanation:</strong> This is a form of <strong>Parametric Polymorphism</strong>.
+                        Instead of defining multiple functions for <code>int</code>, <code>float</code>, etc., you
+                        define one template. The compiler generates the specific code only when the function is called
+                        with a specific type.
+                    </li>
+                    <li><strong>Code Example:</strong></li>
+                </ul>
+                <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+// Generic function using templates
+template &lt;typename T&gt;
+T findMax(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    cout << findMax<int>(5, 10) << endl;       // Works with int
+    cout << findMax<double>(5.5, 2.1) << endl; // Works with double
+    return 0;
+}
+</code></pre>
+            </section>
+
+            <!-- Function Name Overloading -->
+            <section id="FunctionNameOverloading">
+                <h2>Function Name Overloading</h2>
+                <p><strong>Definition:</strong> Having multiple functions with the same name but different signatures
+                    (different parameters or types).</p>
+                <p><strong>Explanation:</strong> This is <em>Compile-time Polymorphism</em>. It allows a single action
+                    name to be used for different types of inputs, making the code more intuitive.</p>
+                <pre><code>void print(int i) { cout &lt;&lt; "Integer: " &lt;&lt; i; }
+void print(string s) { cout &lt;&lt; "String: " &lt;&lt; s; }</code></pre>
+            </section>
+
+            <!-- Overriding Inheritance Methods -->
+            <section id="OverridingInheritanceMethods">
+                <h2>Overriding Inheritance Methods</h2>
+                <p><strong>Definition:</strong> Redefining a base class method in a derived class to provide specialized
+                    behavior.</p>
+                <p><strong>Explanation:</strong> To enable overriding, the base class must declare the function as
+                    <code>virtual</code>. The child class then uses the <code>override</code> keyword to signal it is
+                    replacing the parent's logic.
+                </p>
+                <pre><code>class Base {
+public:
+    virtual void show() { cout &lt;&lt; "Base Logic"; }
+};
+
+class Derived : public Base {
+public:
+    void show() override { cout &lt;&lt; "Child Logic"; }
+};</code></pre>
+            </section>
+
+            <!-- Run-time Polymorphism -->
+
+            <section id="Run-timePolymorphism">
+                <h2>Run-time Polymorphism</h2>
+                <p><strong>Definition:</strong> Determining which function implementation to execute while the program
+                    is running, rather than at compile time.</p>
+                <p><strong>Explanation:</strong> This is achieved using base class pointers and virtual functions. It
+                    allows a collection (like a list of <code>Shape</code> pointers) to trigger the correct
+                    <code>draw()</code> method for circles, squares, or triangles dynamically.
+                </p>
+            </section>
+
+            <!-- Multiple Inheritance -->
+
+            <section id="MultipleInheritance">
+                <h2>Multiple Inheritance</h2>
+                <p><strong>Definition:</strong> A feature where a class can inherit features from more than one parent
+                    class.</p>
+                <p><strong>Explanation:</strong> This is useful for combining behaviors (e.g., a <code>SmartPhone</code>
+                    inherits from both <code>Camera</code> and <code>Phone</code>). However, it requires care to avoid
+                    the "Diamond Problem," where the compiler gets confused by duplicate inherited members.</p>
+                <pre><code>class Battery { public: void power() {} };
+class Processor { public: void compute() {} };
+
+class Laptop : public Battery, public Processor { 
+    // Inherits both power() and compute()
+};</code></pre>
+            </section>
+
+            <section>
+                <h2>Comparison</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Binding Time</th>
+                            <th>Core Purpose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Templates</strong></td>
+                            <td>Compile-time</td>
+                            <td>Logic reuse across any data type.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Overloading</strong></td>
+                            <td>Compile-time</td>
+                            <td>Same name, different input parameters.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Overriding</strong></td>
+                            <td>Run-time</td>
+                            <td>Customizing parent behavior in child.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multiple Inheritance</strong></td>
+                            <td>Compile-time</td>
+                            <td>Combining features from multiple sources.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Streams and Files -->
+            <section id="StreamsandFiles">
+                <h2>Streams and Files</h2>
+                <p><strong>Definition:</strong> A <em>Stream</em> is a sequence of bytes used as an interface to
+                    transfer data between a program and an external destination, like a <em>File</em>.</p>
+                <div class="feature-box">
+                    <strong>Key Libraries:</strong> <code>&lt;fstream&gt;</code> provides <code>ifstream</code>
+                    (reading), <code>ofstream</code> (writing), and <code>fstream</code> (both).
+                </div>
+                <pre><code>#include &lt;fstream&gt;
+using namespace std;
+
+void saveRecord() {
+    ofstream outFile("log.txt", ios::app); // Open in append mode
+    outFile << "New deployment log entry." << endl;
+    outFile.close();
+}</code></pre>
+            </section>
+
+            <!-- Namespaces -->
+            <section id="Namespaces">
+                <h2>Namespaces</h2>
+                <p><strong>Definition:</strong> A mechanism to group related entities (classes, functions) under a
+                    unique name to prevent <strong>Naming Collisions</strong>.</p>
+                <p>This is essential when integrating multiple third-party libraries that might use the same function
+                    names like <code>init()</code> or <code>process()</code>.</p>
+                <pre><code>namespace Database {
+    void connect() { /* SQL Logic */ }
+}
+
+namespace API {
+    void connect() { /* REST Logic */ }
+}
+
+// Usage: Database::connect(); API::connect();</code></pre>
+            </section>
+
+            <!-- Exception Handling -->
+            <section id="ExceptionHandling">
+                <h2>Exception Handling</h2>
+                <p><strong>Definition:</strong> A structured way to react to exceptional circumstances (runtime errors)
+                    during program execution.</p>
+                <ul>
+                    <li><span class="tag">Try:</span> Block where error-prone code resides.</li>
+                    <li><span class="tag">Throw:</span> Used to signal the occurrence of an error.</li>
+                    <li><span class="tag">Catch:</span> The handler that takes action after an error.</li>
+                </ul>
+                <pre><code>try {
+    if (divisor == 0) throw "DivisionByZeroError";
+    result = total / divisor;
+} catch (const char* e) {
+    cout << "Critical Error: " << e;
+}</code></pre>
+            </section>
+
+            <!-- Generic Classes -->
+
+            <section id="GenericClasses">
+                <h2>Generic Classes</h2>
+                <p><strong>Definition:</strong> A class that uses <em>Templates</em> to allow it to operate on various
+                    data types without being rewritten for each one.</p>
+                <p>This is the foundation of data structures like Stacks, Queues, and Linked Lists in modern libraries.
+                </p>
+                <pre><code>template &lt;class T&gt;
+class Storage {
+    T item;
+public:
+    void set(T i) { item = i; }
+    T get() { return item; }
+};
+
+// Usage: Storage&lt;int&gt; myInts; Storage&lt;string&gt; myStrings;</code></pre>
+            </section>
+
+            <section>
+                <h2>Reference Guide</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Concept</th>
+                            <th>Primary Usage</th>
+                            <th>Syntax Keyword</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Streams</strong></td>
+                            <td>External Data Persistence</td>
+                            <td><code>fstream</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Namespaces</strong></td>
+                            <td>Code Organization</td>
+                            <td><code>namespace</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exceptions</strong></td>
+                            <td>Error Management</td>
+                            <td><code>try / catch</code></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Generic Classes</strong></td>
+                            <td>Reusable Data Structures</td>
+                            <td><code>template &lt;class T&gt;</code></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- page footer -->
+
+    <footer class="footer">
+        <div class="footeritems">
+            <h class="webName">CodingWithMannu</h>
+        </div>
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-column">
+                <h3>About Us</h3>
+                <p>We provide high-quality courses in AI/ML, Web Development, Data Science, and more to help learners
+                    build future-ready skills.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                    <li><a href="#contactSection">Contact</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: codingwithmannu@gmail.com</li>
+                    <li>Phone: +91</li>
+                    <li>Address: Uttar Pradesh, India</li>
+                </ul>
+            </div>
+
+            <!-- Social Media -->
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 CodingWithMannu. All rights reserved.</p>
+        </div>
+    </footer>
+    <button id="backToTop">↑</button>
+
+
+    <!-- Highlight.js Script -->
+    <script src="notes.js"></script>
+    <script>
+        // Show button when scrolling down
+        const backToTopBtn = document.getElementById("backToTop");
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        });
+
+        // Smooth scroll to top
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+            const btn = document.querySelector(".toggle-btn");
+            if (document.body.classList.contains("dark-mode")) {
+                btn.textContent = "☀️";
+            } else {
+                btn.textContent = "🌙";
+            }
+        }
+
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+
+</html>
