@@ -36,4 +36,42 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 
+const nodemailer = require("nodemailer");
+const bodyParser = require("body-parser");
 
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post("/send-email", async (req, res) => {
+    const { name, email, message } = req.body;
+
+    let transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+            user: "suryavanshimanu744@gmail.com",
+            pass: "bagq upaf rnhz uopq"
+        }
+    });
+
+    let mailOptions = {
+        from: email,
+        to: "suryavanshimanu744@gmail.com",
+        subject: "New Contact Form Message",
+        text: `
+Name: ${name}
+Email: ${email}
+Message: ${message}
+        `
+    };
+
+    try {
+        await transporter.sendMail(mailOptions);
+        res.json({ success: true });
+    } catch (error) {
+        res.json({ success: false, error: error.message });
+    }
+});
+
+app.listen(3000, () => {
+    console.log("Server running on http://localhost:3000");
+});
