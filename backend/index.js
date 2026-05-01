@@ -31,33 +31,51 @@ mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
 
-// Start server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+////////////////////////////////////////////////////////////////////////////////
 
 
+require("dotenv").config();
 const nodemailer = require("nodemailer");
 const bodyParser = require("body-parser");
 
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
+// Test route
+app.get("/", (req, res) => {
+    res.send("Server is running...");
+});
+
+// Send email API
 app.post("/send-email", async (req, res) => {
     const { name, email, message } = req.body;
 
+    // Basic validation
+    if (!name || !email || !message) {
+        return res.status(400).json({
+            success: false,
+            message: "All fields are required"
+        });
+    }
+
+    // Create transporter
     let transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-            user: "suryavanshimanu744@gmail.com",
-            pass: "bagq upaf rnhz uopq"
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 
     let mailOptions = {
         from: email,
-        to: "suryavanshimanu744@gmail.com",
-        subject: "New Contact Form Message",
+        to: process.env.EMAIL_USER,
+        subject: "📩 New Contact Form Message",
         text: `
+New message received:
+
 Name: ${name}
 Email: ${email}
 Message: ${message}
@@ -66,12 +84,23 @@ Message: ${message}
 
     try {
         await transporter.sendMail(mailOptions);
-        res.json({ success: true });
+
+        return res.status(200).json({
+            success: true,
+            message: "Email sent successfully"
+        });
+
     } catch (error) {
-        res.json({ success: false, error: error.message });
+        console.log(error);
+
+        return res.status(500).json({
+            success: false,
+            message: "Email sending failed",
+            error: error.message
+        });
     }
 });
 
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
-});
+// Start server
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
