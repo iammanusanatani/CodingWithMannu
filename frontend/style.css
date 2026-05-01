@@ -1,11 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "Arvo", serif;
+    font-family:Poppins, sans-serif;
 }
 
 body {
-    background: #0f172a;
+    background: linear-gradient(135deg, #020617, #0f172a, #020617);
+    background: #020617;
 }
 
 
@@ -29,25 +30,27 @@ header {
     color: #e2e8f0;
     justify-content: space-between;
     padding: 7px;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    background-size: cover;
-
+    background: #0f172a;
+    background: rgba(2, 6, 23, 0.6);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
-#nav-auth-top{
+#nav-auth-top {
     border-left: 2px solid white;
 }
+
 .Hitem1 {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     padding-left: 24px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: sans-serif;
     font-size: larger;
     font-weight: bold;
     gap: 8px;
+    color: #e6f0ff;
 }
 
 .Hitem1 i {
@@ -75,9 +78,8 @@ header {
     display: flex;
     gap: 20px;
 }
-
-.menuList a {
-    color: orange;
+.meanulisticon {
+    color:#cbd5f5;;
     text-decoration: none;
     display: inline-block;
 }
@@ -103,6 +105,7 @@ header {
 /* scroll-container */
 
 .scroll-container {
+    position: relative;
     overflow-x: auto;
     display: flex;
     padding: 10px;
@@ -171,10 +174,12 @@ header {
         font-size: 12px;
         padding: 8px 10px;
     }
-    .Hitem1{
+
+    .Hitem1 {
         width: 65%;
     }
-    .Hitem3{
+
+    .Hitem3 {
         width: auto;
     }
 }
@@ -195,30 +200,17 @@ header {
     height: 750px;
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
     /* background: linear-gradient(135deg, #1e3c72, #2a5298, #fbc2eb, #a6c1ee); */
     /* background-image: url("Slidebg.jpeg"); */
     /* background-size: cover; */
-    background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
-    animation: codeFlow 2s ease infinite;
-}
-
-@keyframes codeFlow {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    /* background: linear-gradient(135deg, #0f0f0f, #1a1a2e, #16213e);
+    background: #020617; */
+    position: relative;
 }
 
 .heroItems {
-    padding: 26px;
+    margin-top: 3.7rem;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -226,16 +218,22 @@ header {
     color: #f9f9f9;
 }
 
-.heroHeading {
-    font-family: "Arvo", serif;
-    color: orange;
-    font-size: 4rem;
+.hero-text h1{
+  font-size: 5rem;
+  line-height:1.2;
+  font-family: "Arvo", serif;
 }
+
+.hero-text span{
+  color:#38bdf8;
+  font-family: "Arvo", serif;
+}
+
 
 .heroSub,
 .dailyupdata {
     color: #e0e0e0;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:  monospace;
 }
 
 .heroItem4 {
@@ -266,17 +264,20 @@ header {
     .Hitem2 {
         display: none;
     }
-    .Hitem3{
+
+    .Hitem3 {
         color: #0072ff;
     }
 
-    .heroHeading {
-        font-size: 51px;
+    .hero-text h1 {
+        font-size: 34px;
     }
 
-    .heroSub,
     .subHeadingContent {
         font-size: 20px;
+    }
+    .heroSub{
+        font-size: 17px;
     }
 }
 
@@ -291,12 +292,32 @@ header {
         font-size: 5px;
         background-color: #f9f9f9;
     }
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .subHeadingContent {
+        font-size: 20px;
+    }
+    .heroSub{
+        font-size: 17px;
+    }
 }
 
 /* Medium devices (tablets, portrait) */
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .Hitem2 {
         display: none;
+    }
+    .hero-text h1 {
+        font-size: 57px;
+    }
+
+    .subHeadingContent {
+        font-size: 20px;
+    }
+    .heroSub{
+        font-size: 17px;
     }
 
 }
@@ -341,7 +362,7 @@ header {
 }
 
 #nav-auth-top a {
-    color: black;;
+    color: black;
 }
 
 .navAuthTop {
@@ -443,59 +464,96 @@ header {
 
 
 .contact {
+    width: 100%;
     justify-self: center;
-    width: 80%;
-    background: #e6f0ff;
     padding: 2rem;
-    border-radius: 8px;
-    margin: 2rem;
 }
 
 .contact h2 {
-    color: #004080;
+    text-align: center;
+    color:#cbd5e1;
     margin-bottom: 0.5rem;
 }
 
 .contact p {
+    text-align: center;
     margin-bottom: 1.5rem;
-    color: #555;
+    color: #cbd5f5
 }
 
-.contact-form {
+form {
+    background:#0f172a;
+    padding: 25px;
+    border-radius: 12px;
+    width: 350px;
+    
     display: flex;
+    justify-self: center;
     flex-direction: column;
+    box-shadow:0 0 25px rgba(56,189,248,0.2);
 }
 
-.contact-form label {
-    margin-bottom: 0.25rem;
-    font-weight: bold;
+form input,
+form textarea {
+    margin-top: 10px;
+    padding: 10px;
+    border:2px solid #0072ff;
+    border-radius: 6px;
+    background: none;
+    outline: none;
+    transition: 0.3s;
+    color: #cbd5f5;
 }
 
-.contact-form input,
-.contact-form textarea {
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+form input:focus,
+form textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 5px rgba(102,126,234,0.5);
+    color: #cbd5f5;
 }
 
-.contact-form button {
-    padding: 0.75rem;
-    background: #0066cc;
-    color: #fff;
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background: #0072ff;
+    color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-.contact-form button:hover {
-    background: #004080;
+button:hover {
+    background: #2575fc;
+    transform: scale(1.03);
 }
 
-/* Responsive tweaks */
-@media (max-width: 600px) {
-    .contact {
-        margin: 1rem;
-        padding: 1rem;
-    }
+#status {
+    margin-top: 10px;
+    text-align: left;
+    font-size: small;
+
+}
+
+/* Success message */
+.success {
+    color:#22c55e;
+}
+
+/* Error message */
+.error {
+    color: red;
+}
+
+#loader {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0.3; }
 }

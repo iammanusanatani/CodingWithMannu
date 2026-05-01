@@ -12,10 +12,29 @@
     <div class="container">
         <div id="start-screen">
             <h1>Welcome to Quiz</h1>
-            <button onclick="startQuiz()">Start Quiz</button>
+            <h2>C Programming</h2>
+            <h3>Total Quiz 50</h3>
+            <h3>Test Duration: <code>500 Second</code></h3>
+            <button onclick="Back()">leave</button>
+            <button onclick="startQuiz()">Start</button>
+            <details>
+                <summary>Quiz Guidelines</summary>
+            <ul>
+                <li>Each question has only <b>one correct answer</b>.</li>
+                <li>Click on an option to select your answer.</li>
+                <li>If your answer is <span class="green"> correct</span>, it will turn <span class="green">green</span>
+                    ✅
+                </li>
+                <li>If your answer is <span class="red"> wrong</span>, it will turn <span class="red"> red</span> ❌</li>
+                <li>The correct answer will also be highlighted after selection.</li>
+                <li>You cannot change your answer once selected.</li>
+                <li>Try to answer all questions for best results.</li>
+                <li>Your score will be shown at the end of the quiz.</li>
+            </ul>
+            </details>
         </div>
     </div>
-    
+
     <div class="quiz-box" id="quizBox">
         <h3 id="counter"></h3>
         <div class="timer">⏱ Time: <span id="time">10</span>s</div>
@@ -27,26 +46,56 @@
 
     <script>
         let quiz = [
-            {
-                q: "Who developed C language?",
-                options: ["Dennis Ritchie", "Bjarne Stroustrup", "James Gosling", "Guido van Rossum"],
-                answer: 0
-            },
-            {
-                q: "C language was developed in which year?",
-                options: ["1965", "1972", "1980", "1995"],
-                answer: 1
-            },
-            {
-                q: "Which symbol ends a statement?",
-                options: [".", ",", ";", ":"],
-                answer: 2
-            },
-            {
-                q: "Which loop runs at least once?",
-                options: ["for", "while", "do-while", "none"],
-                answer: 2
-            }
+            { q: "Who developed C language?", options: ["Dennis Ritchie", "Bjarne Stroustrup", "James Gosling", "Guido van Rossum"], answer: 0 },
+            { q: "C language was developed in which year?", options: ["1965", "1972", "1980", "1995"], answer: 1 },
+            { q: "Which of the following is a valid C variable name?", options: ["2num", "num_2", "num-2", "@num"], answer: 1 },
+            { q: "Which symbol is used to end a statement in C?", options: [".", ",", ";", ":"], answer: 2 },
+            { q: "Which header file is required for printf()?", options: ["stdlib.h", "stdio.h", "string.h", "math.h"], answer: 1 },
+            { q: "Which data type is used to store a character?", options: ["int", "float", "char", "double"], answer: 2 },
+            { q: "What is the size of int (generally)?", options: ["2 bytes", "4 bytes", "8 bytes", "Depends on system"], answer: 3 },
+            { q: "Which keyword is used to define a constant?", options: ["const", "constant", "define", "fixed"], answer: 0 },
+            { q: "Which operator is used for assignment?", options: ["==", "=", "!=", "<="], answer: 1 },
+            { q: "Which function is used to take input?", options: ["printf()", "scanf()", "input()", "cin"], answer: 1 },
+            { q: "What is the default return type of main()?", options: ["void", "int", "float", "char"], answer: 1 },
+            { q: "Which loop is guaranteed to execute at least once?", options: ["for", "while", "do-while", "none"], answer: 2 },
+            { q: "Which operator is used for logical AND?", options: ["&", "&&", "||", "!"], answer: 1 },
+            { q: "Which is a correct comment in C?", options: ["// comment", "/* comment */", "Both", "None"], answer: 2 },
+            { q: "Which keyword is used to exit loop?", options: ["stop", "break", "exit", "return"], answer: 1 },
+            { q: "Which operator is used for increment?", options: ["++", "--", "+", "+="], answer: 0 },
+            { q: "What is an array?", options: ["Collection of variables", "Collection of same data type", "Function", "Loop"], answer: 1 },
+            { q: "Which symbol is used for pointer?", options: ["&", "*", "#", "@"], answer: 1 },
+            { q: "Which function is used to allocate memory?", options: ["malloc()", "alloc()", "new()", "create()"], answer: 0 },
+            { q: "Which operator gives address of variable?", options: ["*", "&", "%", "@"], answer: 1 },
+            { q: "Which data type has decimal values?", options: ["int", "char", "float", "void"], answer: 2 },
+            { q: "Which is not a loop?", options: ["for", "while", "if", "do-while"], answer: 2 },
+            { q: "What is sizeof operator?", options: ["Function", "Keyword", "Operator", "Variable"], answer: 2 },
+            { q: "Which is used for decision making?", options: ["for", "if", "switch", "Both B and C"], answer: 3 },
+            { q: "What is NULL pointer?", options: ["Pointer with value 0", "Empty pointer", "Both", "None"], answer: 2 },
+            { q: "Which is used to define macro?", options: ["#include", "#define", "#macro", "#if"], answer: 1 },
+            { q: "Which library is used for string functions?", options: ["stdio.h", "string.h", "math.h", "stdlib.h"], answer: 1 },
+            { q: "Which function finds string length?", options: ["strlen()", "size()", "length()", "count()"], answer: 0 },
+            { q: "Which loop is best for known iterations?", options: ["while", "do-while", "for", "if"], answer: 2 },
+            { q: "What is recursion?", options: ["Loop", "Function calling itself", "Variable", "Array"], answer: 1 },
+            { q: "Which keyword is used for function return?", options: ["break", "return", "exit", "end"], answer: 1 },
+            { q: "Which format specifier is for int?", options: ["%f", "%c", "%d", "%s"], answer: 2 },
+            { q: "Which format specifier is for float?", options: ["%d", "%f", "%c", "%s"], answer: 1 },
+            { q: "Which is correct pointer declaration?", options: ["int ptr*;", "int ptr;", "ptr int;", "*int ptr;"], answer: 1 },
+            { q: "Which operator is used for comparison?", options: ["=", "==", ":=", "->"], answer: 1 },
+            { q: "Which is a storage class?", options: ["auto", "int", "float", "char"], answer: 0 },
+            { q: "Which function is used to free memory?", options: ["free()", "delete()", "remove()", "clear()"], answer: 0 },
+            { q: "Which keyword is used for global variable?", options: ["extern", "auto", "static", "register"], answer: 0 },
+            { q: "Which is used for file handling?", options: ["FILE", "file", "fp", "data"], answer: 0 },
+            { q: "Which function opens a file?", options: ["open()", "fopen()", "fileopen()", "start()"], answer: 1 },
+            { q: "Which function closes a file?", options: ["close()", "fclose()", "end()", "stop()"], answer: 1 },
+            { q: "Which function reads file?", options: ["fread()", "read()", "scan()", "input()"], answer: 0 },
+            { q: "Which function writes to file?", options: ["fwrite()", "write()", "print()", "output()"], answer: 0 },
+            { q: "Which is not a data type?", options: ["int", "real", "float", "char"], answer: 1 },
+            { q: "Which operator is modulus?", options: ["/", "%", "*", "+"], answer: 1 },
+            { q: "Which keyword is used for structure?", options: ["struct", "class", "object", "record"], answer: 0 },
+            { q: "Which keyword is used for union?", options: ["union", "merge", "combine", "struct"], answer: 0 },
+            { q: "Which operator is used in pointer arithmetic?", options: ["+", "-", "Both", "None"], answer: 2 },
+            { q: "Which is correct function syntax?", options: ["int fun() {}", "function fun() {}", "fun int() {}", "void = fun()"], answer: 0 },
+            { q: "Which is entry point of program?", options: ["start()", "main()", "init()", "run()"], answer: 1 }
         ];
 
         // shuffle

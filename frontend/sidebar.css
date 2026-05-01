@@ -14,8 +14,10 @@
     right: -100%;
     width: 300px;
     height: 100%;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(18px);
+    background: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: -10px 0 30px rgba(56, 189, 248, 0.2);
     /* box-shadow: 0 10px 40px rgba(0,0,0,0.25); */
     border-bottom-left-radius: 25px;
     transition: 0.45s cubic-bezier(0.25, 1, 0.5, 1);
@@ -35,28 +37,26 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    color: white;
-    
+    /* background: linear-gradient(135deg, #6366f1, #8b5cf6); */
+    background: #020617;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    color: #cbd5f5;
 }
 
 /* Logo */
 .logo {
-    color: white;
+    color: #cbd5f5;
     font-weight: 600;
     text-decoration: none;
 }
 
 /* Close */
 .close-btn {
-    font-size: 24px;
+    font-size: 28px;
     border: none;
-    background: rgba(255,255,255,0.2);
     color: white;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
     cursor: pointer;
+    background: none;
 }
 
 /* Container */
@@ -79,8 +79,8 @@
     padding: 14px;
     border-radius: 14px;
     text-decoration: none;
-    color: #222;
-    background: rgba(255,255,255,0.6);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    color:#cbd5f5;
     transition: 0.3s;
     font-weight: 500;
 }
@@ -89,29 +89,32 @@
 .navLinks a:hover {
     transform: translateX(8px);
     background: white;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    color: #020617;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* User */
 #sidebar-user {
-  display: flex;
+    display: flex;
     padding: 14px;
     border-radius: 14px;
-    background: rgba(255,255,255,0.7);
     margin-top: 15px;
+     border: 2px solid #00c6ff;
 }
-#sidebar-user a{
-  margin-left: 5px;
-  font-size: 20px;
-  text-decoration: none;
-  color: #222;
+
+#sidebar-user a,p {
+    margin-left: 5px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #cbd5f5;
+    
 }
 
 /* Logout */
 
 
-#sidebar-bottom{
-  width: 100%;
+#sidebar-bottom {
+    width: 100%;
     padding: 10px;
     border: none;
     text-align: center;
@@ -123,12 +126,12 @@
     justify-content: center;
 }
 
-.lastLogoutbtn a{
-  color: white;
-  padding-left: 10px;
-  padding-right: 10px;
-  text-decoration: none;
-  cursor: pointer;
+.lastLogoutbtn a {
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -136,7 +139,7 @@
 #overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.35);
+    background: rgba(0, 0, 0, 0.35);
     backdrop-filter: blur(4px);
     opacity: 0;
     visibility: hidden;

@@ -5,7 +5,7 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family:  Arial, sans-serif;
       background: #0f0f0f;
       color: #ddd;
     }
@@ -31,10 +31,16 @@
     }
 
     header {
-      background: linear-gradient(135deg, #0f0f0f, #1a1a2efe, #16213e);
+      /* background: linear-gradient(135deg, #0f0f0f, #1a1a2efe, #16213e); */
+      background: #0f0f0f;
+      width: 100%;
       color: #fff;
+      font-family: monospace;
       padding: 25px;
       text-align: center;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      border-bottom: 2px solid #e74c3c;
     }
 
     .container {

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Programming Quizs</title>
+    <link rel="stylesheet" href="Quiz.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="start-screen">
+            <h1>Welcome to Quiz</h1>
+            <h2>C++ Programming</h2>
+            <h3>Total Quiz 50</h3>
+            <h3>Test Duration: <code>500 Second</code></h3>
+            <button onclick="Back()">leave</button>
+            <button onclick="startQuiz()">Start</button>
+            <details>
+                <summary>Quiz Guidelines</summary>
+            <ul>
+                <li>Each question has only <b>one correct answer</b>.</li>
+                <li>Click on an option to select your answer.</li>
+                <li>If your answer is <span class="green"> correct</span>, it will turn <span class="green">green</span>
+                    ✅
+                </li>
+                <li>If your answer is <span class="red"> wrong</span>, it will turn <span class="red"> red</span> ❌</li>
+                <li>The correct answer will also be highlighted after selection.</li>
+                <li>You cannot change your answer once selected.</li>
+                <li>Try to answer all questions for best results.</li>
+                <li>Your score will be shown at the end of the quiz.</li>
+            </ul>
+            </details>
+        </div>
+    </div>
+
+    <div class="quiz-box" id="quizBox">
+        <h3 id="counter"></h3>
+        <div class="timer">⏱ Time: <span id="time">10</span>s</div>
+        <h2 id="question"></h2>
+        <div id="options"></div>
+        <button onclick="Back()">leave</button>
+        <button onclick="nextQuestion()">Next</button>
+    </div>
+
+    <script>
+        let quiz = [
+    { q: "Who developed C++?", options: ["Dennis Ritchie", "Bjarne Stroustrup", "James Gosling", "Guido van Rossum"], answer: 1 },
+    { q: "C++ is an extension of which language?", options: ["Java", "Python", "C", "Pascal"], answer: 2 },
+    { q: "Which symbol is used for comments in C++?", options: ["//", "/* */", "Both", "None"], answer: 2 },
+    { q: "Which of the following is a valid C++ variable name?", options: ["2var", "var_2", "var-2", "@var"], answer: 1 },
+    { q: "Which header file is used for input/output?", options: ["stdlib.h", "iostream", "string", "math.h"], answer: 1 },
+    { q: "Which operator is used for input?", options: ["<<", ">>", "==", "="], answer: 1 },
+    { q: "Which operator is used for output?", options: ["<<", ">>", "==", "="], answer: 0 },
+    { q: "Which keyword is used to define a class?", options: ["struct", "class", "object", "define"], answer: 1 },
+    { q: "Which is the correct main function?", options: ["void main()", "int main()", "main()", "None"], answer: 1 },
+    { q: "Which concept is used in C++?", options: ["OOP", "POP", "Functional", "None"], answer: 0 },
+    { q: "Which is not a data type?", options: ["int", "float", "real", "char"], answer: 2 },
+    { q: "Which keyword is used for inheritance?", options: ["extend", "inherits", ":", "base"], answer: 2 },
+    { q: "Which is used to allocate memory?", options: ["malloc()", "alloc()", "new", "create()"], answer: 2 },
+    { q: "Which is used to free memory?", options: ["free()", "delete", "remove()", "clear()"], answer: 1 },
+    { q: "Which loop runs at least once?", options: ["for", "while", "do-while", "none"], answer: 2 },
+    { q: "Which keyword is used for constant?", options: ["constant", "const", "define", "fixed"], answer: 1 },
+    { q: "Which operator is used for scope resolution?", options: [".", "->", "::", "#"], answer: 2 },
+    { q: "Which is a correct comment?", options: ["// comment", "/* comment */", "Both", "None"], answer: 2 },
+    { q: "Which function is used for output?", options: ["printf()", "cout", "print()", "write()"], answer: 1 },
+    { q: "Which function is used for input?", options: ["scanf()", "cin", "input()", "read()"], answer: 1 },
+    { q: "Which operator is used for assignment?", options: ["=", "==", "!=", "<="], answer: 0 },
+    { q: "Which is used for decision making?", options: ["if", "switch", "Both", "None"], answer: 2 },
+    { q: "What is function overloading?", options: ["Same name, different parameters", "Different name, same parameters", "Same function", "None"], answer: 0 },
+    { q: "What is constructor?", options: ["Function", "Special function", "Variable", "Class"], answer: 1 },
+    { q: "What is destructor?", options: ["Function", "Special function", "Variable", "Class"], answer: 1 },
+    { q: "Which operator is used for increment?", options: ["++", "--", "+", "+="], answer: 0 },
+    { q: "Which is a loop?", options: ["for", "while", "do-while", "All"], answer: 3 },
+    { q: "Which is used to define macro?", options: ["#define", "#include", "#macro", "#if"], answer: 0 },
+    { q: "Which is used for string?", options: ["string", "char", "Both", "None"], answer: 2 },
+    { q: "Which is correct array declaration?", options: ["int arr[]", "int arr[5]", "array int", "arr int[]"], answer: 1 },
+    { q: "Which is pointer symbol?", options: ["&", "*", "#", "@"], answer: 1 },
+    { q: "Which operator gives address?", options: ["*", "&", "%", "@"], answer: 1 },
+    { q: "Which is reference operator?", options: ["&", "*", "%", "@"], answer: 0 },
+    { q: "Which keyword is used for namespace?", options: ["space", "namespace", "names", "define"], answer: 1 },
+    { q: "Which keyword is used to stop loop?", options: ["break", "stop", "exit", "return"], answer: 0 },
+    { q: "Which is used for file handling?", options: ["fstream", "file", "data", "FILE"], answer: 0 },
+    { q: "Which function opens file?", options: ["open()", "fopen()", "fileopen()", "start()"], answer: 0 },
+    { q: "Which function closes file?", options: ["close()", "fclose()", "end()", "stop()"], answer: 0 },
+    { q: "Which is correct class syntax?", options: ["class A {}", "A class {}", "define class A", "class = A"], answer: 0 },
+    { q: "Which is used for polymorphism?", options: ["Overloading", "Overriding", "Both", "None"], answer: 2 },
+    { q: "Which access specifier is private?", options: ["private", "public", "protected", "All"], answer: 0 },
+    { q: "Which access specifier is public?", options: ["private", "public", "protected", "None"], answer: 1 },
+    { q: "Which is default access in class?", options: ["public", "private", "protected", "none"], answer: 1 },
+    { q: "Which is default access in struct?", options: ["public", "private", "protected", "none"], answer: 0 },
+    { q: "Which is used for exception handling?", options: ["try", "catch", "throw", "All"], answer: 3 },
+    { q: "Which keyword is used for inheritance type?", options: ["public", "private", "protected", "All"], answer: 3 },
+    { q: "Which is used to define object?", options: ["class", "object", "variable of class", "function"], answer: 2 },
+    { q: "Which operator is used in pointer arithmetic?", options: ["+", "-", "Both", "None"], answer: 2 },
+    { q: "Which is correct function syntax?", options: ["int fun() {}", "function fun() {}", "fun int() {}", "void = fun()"], answer: 0 },
+    { q: "Entry point of C++ program?", options: ["start()", "main()", "init()", "run()"], answer: 1 }
+];
+
+        // shuffle
+        quiz.sort(() => Math.random() - 0.5);
+
+        let index = 0;
+        let score = 0;
+        let selectedAnswer = null;
+        let userAnswers = [];
+        let timeLeft = 10;
+        let timer;
+
+        // sound
+        let correctSound = new Audio("https://www.soundjay.com/buttons/sounds/button-3.mp3");
+        let wrongSound = new Audio("https://www.soundjay.com/buttons/sounds/button-10.mp3");
+
+        function startTimer() {
+            timeLeft = 10;
+            document.getElementById("time").innerText = timeLeft;
+
+            timer = setInterval(() => {
+                timeLeft--;
+                document.getElementById("time").innerText = timeLeft;
+
+                if (timeLeft === 0) {
+                    clearInterval(timer);
+                    nextQuestion();
+                }
+            }, 1000);
+        }
+
+        function loadQuestion() {
+            clearInterval(timer);
+            startTimer();
+
+            selectedAnswer = null;
+            const q = quiz[index];
+
+            document.getElementById("counter").innerText =
+                `Question ${index + 1}/${quiz.length}`;
+
+            document.getElementById("question").innerText = q.q;
+
+            let html = "";
+            q.options.forEach((opt, i) => {
+                html += `<div class="option" onclick="selectOption(${i})">${opt}</div>`;
+            });
+
+            document.getElementById("options").innerHTML = html;
+        }
+
+        function selectOption(i) {
+            if (selectedAnswer !== null) return;
+
+            selectedAnswer = i;
+            const correct = quiz[index].answer;
+            const options = document.querySelectorAll(".option");
+
+            options.forEach((opt, idx) => {
+                if (idx === correct) opt.classList.add("correct");
+                else if (idx === i) opt.classList.add("wrong");
+            });
+
+            if (i === correct) correctSound.play();
+            else wrongSound.play();
+        }
+
+        function nextQuestion() {
+            clearInterval(timer);
+
+            userAnswers.push(selectedAnswer);
+
+            if (selectedAnswer === quiz[index].answer) {
+                score++;
+            }
+
+            index++;
+
+            if (index < quiz.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }
+
+        function showResult() {
+            let percent = (score / quiz.length) * 100;
+
+            // save best score
+            let best = localStorage.getItem("bestScore") || 0;
+            if (score > best) {
+                localStorage.setItem("bestScore", score);
+                best = score;
+            }
+
+            let rank = "Beginner";
+            if (percent > 80) rank = "Expert";
+            else if (percent > 50) rank = "Intermediate";
+
+            document.getElementById("quizBox").innerHTML = `
+        <h2>🎉 Finished</h2>
+        <h3>Score: ${score}/${quiz.length}</h3>
+        <p>Best: ${best}</p>
+        <p>Rank: ${rank}</p>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progress"></div>
+        </div>
+
+        <button onclick="location.reload()">Restart</button>
+    `;
+
+            setTimeout(() => {
+                document.getElementById("progress").style.width = percent + "%";
+            }, 200);
+
+        }
+
+        function startQuiz() {
+            document.getElementById("start-screen").style.display = "none";
+            document.getElementById("quizBox").style.display = "block";
+            loadQuestion();
+        }
+        function Back() {
+            window.location.href = "index.html";
+        }
+
+        loadQuestion();
+    </script>
+
+</body>
+
+</html>

@@ -89,7 +89,7 @@ function renderNavbar() {
   } else {
     // Show login/signup when logged out
     navAuthTop.innerHTML = `<a  href="login.html" class="navAuthTop">Login</a> <a href="signup.html" class="navAuthTop">Signup</a>`;
-    sidebarUser.style="display:none;"; // no user name at top
+    sidebarUser.style = "display:none;"; // no user name at top
     sidebarBottom.innerHTML = `<a href="login.html" class="logout-btn">Login</a> <a href="signup.html" class="logout-btn">Signup</a>`;
   }
 }
@@ -181,4 +181,119 @@ container.addEventListener("mouseenter", () => {
 container.addEventListener("mouseleave", () => {
   isScrolling = true;
 });
+
+
+
+
+/* ========== SOFT PARTICLES ========== */
+const pCanvas = document.getElementById("particles");
+const pCtx = pCanvas.getContext("2d");
+
+pCanvas.width = window.innerWidth;
+pCanvas.height = window.innerHeight;
+
+let particles = [];
+
+class Particle {
+  constructor() {
+    this.x = Math.random() * pCanvas.width;
+    this.y = Math.random() * pCanvas.height;
+    this.size = Math.random() * 1.5;
+    this.speedX = Math.random() * 0.3 - 0.15;
+    this.speedY = Math.random() * 0.3 - 0.15;
+  }
+
+  update() {
+    this.x += this.speedX;
+    this.y += this.speedY;
+
+    if (this.x < 0 || this.x > pCanvas.width) this.x = Math.random() * pCanvas.width;
+    if (this.y < 0 || this.y > pCanvas.height) this.y = Math.random() * pCanvas.height;
+  }
+
+  draw() {
+    pCtx.fillStyle = "#38bdf8"; // soft blue
+    pCtx.beginPath();
+    pCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+    pCtx.fill();
+  }
+}
+
+function initParticles() {
+  for (let i = 0; i < 80; i++) {
+    particles.push(new Particle());
+  }
+}
+
+function animateParticles() {
+  pCtx.clearRect(0, 0, pCanvas.width, pCanvas.height);
+
+  particles.forEach(p => {
+    p.update();
+    p.draw();
+  });
+
+  requestAnimationFrame(animateParticles);
+}
+
+initParticles();
+animateParticles();
+
+
+/* Resize */
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  pCanvas.width = window.innerWidth;
+  pCanvas.height = window.innerHeight;
+});
+
+const texts = [
+  "Learn Coding",
+  "Build Projects",
+  "Master DSA",
+  "Become Developer"
+];
+
+let i = 0, j = 0, isDel = false;
+const typing = document.querySelector(".typing");
+
+function type() {
+  let txt = texts[i];
+
+  typing.textContent = txt.substring(0, j);
+
+  if (!isDel) {
+    j++;
+    if (j > txt.length) { isDel = true; setTimeout(type, 2000); return; }
+  } else {
+    j--;
+    if (j === 0) { isDel = false; i = (i + 1) % texts.length; }
+  }
+
+  setTimeout(type, isDel ? 40 : 80);
+}
+type();
+
+/* ===== CODE TYPING ===== */
+const codeText =
+  `function startLearning() {
+  console.log("Welcome Back");
+}
+
+startLearning();`;
+
+let k = 0;
+const codeBox = document.getElementById("code");
+
+function typeCode() {
+  if (k < codeText.length) {
+    codeBox.textContent += codeText.charAt(k);
+    k++;
+    setTimeout(typeCode, 30);
+  }
+}
+typeCode();
+
 

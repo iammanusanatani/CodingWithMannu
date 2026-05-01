@@ -19,6 +19,12 @@ body {
     display: none;
 }
 
+#start-screen h3 code {
+    font-weight: 200;
+    color: #00ff99;
+    font-family: poppinse;
+}
+
 .option {
     background: rgba(255, 255, 255, 0.2);
     margin: 8px 0;
@@ -74,6 +80,78 @@ button {
 .container {
     text-align: center;
 }
+
 .container button:hover {
-  background: #2563eb;
+    background: #2563eb;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    justify-content: center;
+}
+
+ul li {
+    background: #f5f7ff;
+    margin: 8px 0;
+    padding: 9px 9px;
+    border-radius: 8px;
+    font-size: 12px;
+    color: #444;
+    display: block;
+    text-align: left;
+    transition: 0.3s;
+}
+
+ul li:hover {
+    background: #e0e7ff;
+    transform: translateX(5px);
+}
+
+ul li::before {
+    content: "✔";
+    color: #6c63ff;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.green {
+    color: green;
+    font-weight: bold;
+}
+
+.red {
+    color: red;
+    font-weight: bold;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+summary {
+    margin: 12px;
+    background: linear-gradient(135deg, #4a90e2, #357ab7);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+summary:hover {
+    background: linear-gradient(135deg, #357ab7, #2a5d9f);
 }

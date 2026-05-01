@@ -14,10 +14,13 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="animate.css">
 
 </head>
 
 <body>
+    <canvas id="matrix"></canvas>
+    <canvas id="particles"></canvas>
     <header>
         <nav class="header">
             <div class="headeritems Hitem1">
@@ -26,12 +29,12 @@
             </div>
             <div class="headeritems Hitem2">
                 <div class="menuList">
-                    <a href="index.html">Home</a>
-                    <a href="tutorials.html">Tutorials</a>
-                    <a href="#">Blog</a>
-                    <a href="notes.html">Notes</a>
-                    <a href="course.html">Course</a>
-                    <a href="#contactSection">Contact</a>
+                    <a href="index.html" class="meanulisticon">Home</a>
+                    <a href="tutorials.html" class="meanulisticon">Tutorials</a>
+                    <a href="#" class="meanulisticon">Blog</a>
+                    <a href="notes.html" class="meanulisticon">Notes</a>
+                    <a href="course.html" class="meanulisticon">Course</a>
+                    <a href="#contactSection" class="meanulisticon">Contact</a>
                     <span id="nav-auth-top" style="text-transform: capitalize;"></span>
                 </div>
             </div>
@@ -85,7 +88,7 @@
                 <a href="#contactSection">📞 Contact</a>
             </div>
 
-            <div id="sidebar-user" style="text-transform: capitalize;"></div>
+            <div id="sidebar-user" style="text-transform: capitalize;" title="My Profile"></div>
 
             <div id="sidebar-bottom" class="lastLogoutbtn"></div>
         </div>
@@ -97,20 +100,35 @@
 
     <!-- heroSections -->
 
-    <section id="heroSections" class="heroSection">
+    <section id="heroSections" class="heroSection hero">
         <div class="heroContainer">
+            <div class="heroItems hero-text">
+                <h1>Start Your <span>Coding Journey</span></h1>
+            </div>
             <div class="heroItems">
-                <h1 class="heroHeading">Start Your Coding Journey</h1>
+                <h2 class="typing"></h2>
             </div>
             <div class="heroItems">
                 <h2 class="heroSub">Learn coding step-by-step CodingWithMannu.</h2>
             </div>
-            <div class="heroItems">
-                <a class="startBtn" href="#featureSection">Learn Now</a>
+            <div class="btnbody heroItems">
+                <div class="btn-wrapper">
+                    <a href="#featureSection" class="btn">Learn Now</a>
+                </div>
             </div>
             <div class="heroItems heroItem4">
                 <h class="dailyupdata">{ Daily Updata on 9:30 AM }</h>
             </div>
+        </div>
+    </section>
+    <section class="hero-code-container">
+        <div class="code-box">
+            <div class="code-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+            </div>
+            <pre id="code"></pre>
         </div>
     </section>
 
@@ -141,21 +159,18 @@
             </div>
         </div>
     </section>
+
     <section id="contactSection" class="contact">
-        <h2>Contact Us</h2>
         <p>Have questions about our courses? Send us a message and we’ll get back to you.</p>
-
-        <form class="contact-form">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
-
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" placeholder="Your email" required>
-
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Write your message..." required></textarea>
+        <form id="contactForm">
+            <h2>Contact Us</h2>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Message" required></textarea>
 
             <button type="submit">Send Message</button>
+            <div id="loader" style="display:none;">Sending...</div>
+            <p id="status"></p>
         </form>
     </section>
 
@@ -200,7 +215,8 @@
                 <div class="social-icons">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.instagram.com/codingwithmannu?igsh=MWhseThqZWRoeWJlZA=="><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/codingwithmannu?igsh=MWhseThqZWRoeWJlZA=="><i
+                            class="fab fa-instagram"></i></a>
                     <a href="https://youtube.com/@codingwithmanu?si=qpzO0lDk2D9Mi0FF"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
@@ -211,9 +227,53 @@
         </div>
     </footer>
 
-
-
     <script src="script.js"></script>
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", async function (e) {
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            let loader = document.getElementById("loader");
+            let status = document.getElementById("status");
+
+            // 👉 show loader first
+            loader.style.display = "block";
+            status.innerText = "";
+
+            // 👉 wait 2 seconds (fake loading effect)
+            setTimeout(async () => {
+
+                let res = await fetch("http://localhost:3000/send-email", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                let data = await res.json();
+
+                loader.style.display = "none"; // hide loader
+
+                if (data.success) {
+                    status.style.color = "green";
+                    status.innerText = "Message sent successfully!";
+
+                    this.reset();
+                    // optional smooth message disappear
+                    setTimeout(() => {
+                        status.innerText = "";
+                    }, 2000);
+                } else {
+                    status.style.color = "red";
+                    status.innerText = "❌ Failed to send message";
+                }
+
+            }, 2000); // ⭐ 2 seconds delay
+        });
+    </script>
+
 </body>
 
 </html>
