@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Community - CodingWithMannu</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <header>
+    <h1>CodingWithMannu Community</h1>
+    <p>Ask doubts, help others, grow together</p>
+  </header>
+
+  <!-- FORM CARD -->
+  <div class="card">
+    <h2>Ask Your Question</h2>
+
+    <form id="questionForm">
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label>Your Name</label>
+      </div>
+
+      <div class="input-group">
+        <input type="text" id="topic" required>
+        <label>Post Topic</label>
+      </div>
+
+      <div class="input-group">
+        <textarea id="question" rows="4" required></textarea>
+        <label>Your Question</label>
+      </div>
+
+      <button type="submit">Post Question</button>
+    </form>
+  </div>
+
+  <!-- QUESTIONS -->
+  <div class="card">
+    <details>
+      <summary>All Questions</summary>
+      <div id="questionsList"></div>
+    </details>
+  </div>
+
+</div>
+
+<script src="community.js"></script>
+</body>
+</html>
