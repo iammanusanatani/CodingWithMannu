@@ -4,6 +4,8 @@ const cors = require("cors");
 const path = require("path");
 require("dotenv").config();
 
+const Question = require("./model");
+
 const authRoutes = require("./routes/auth");
 const dashboardRoutes = require("./routes/dashboard");
 const tutorialRoutes = require("./routes/tutorials");
@@ -99,6 +101,39 @@ Message: ${message}
             error: error.message
         });
     }
+});
+
+// POST question
+app.post("/questions", async (req, res) => {
+  try {
+    const newQ = await Question.create(req.body);
+    res.json(newQ);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+// GET all questions
+app.get("/questions", async (req, res) => {
+  const data = await Question.find().sort({ createdAt: -1 });
+  res.json(data);
+});
+
+// ADD REPLY
+app.post("/questions/:id/reply", async (req, res) => {
+  try {
+    const { name, message } = req.body;
+
+    const question = await Question.findById(req.params.id);
+
+    question.replies.push({ name, message });
+
+    await question.save();
+
+    res.json(question);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // Start server
