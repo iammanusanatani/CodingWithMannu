@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Examples - CodingWithMannu</title>
+    <link rel="stylesheet" href="example.css">
+</head>
+<body>
+    <section class="code-section">
+    <h2>Code Examples</h2>
+
+    <div class="code-container">
+        <!-- Tabs -->
+        <div class="code-tabs">
+            <button class="tab active" data-tab="html">HTML</button>
+            <button class="tab" data-tab="css">CSS</button>
+            <button class="tab" data-tab="js">JavaScript</button>
+            <button class="tab" data-tab="python">Python</button>
+        </div>
+
+        <!-- Code Blocks -->
+        <div class="code-content active" id="html">
+<pre><code>&lt;h1&gt;Hello World&lt;/h1&gt;</code></pre>
+        </div>
+
+        <div class="code-content" id="css">
+<pre><code>body {
+  background: #0f172a;
+  color: white;
+}</code></pre>
+        </div>
+
+        <div class="code-content" id="js">
+<pre><code>console.log("Hello World");</code></pre>
+        </div>
+
+        <div class="code-content" id="python">
+<pre><code>print("Hello World")</code></pre>
+        </div>
+    </div>
+</section>
+<script>
+const tabs = document.querySelectorAll(".tab");
+const contents = document.querySelectorAll(".code-content");
+
+tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+
+        tab.classList.add("active");
+        document.getElementById(tab.dataset.tab).classList.add("active");
+    });
+});
+</script>
+    
+</body>
+</html>

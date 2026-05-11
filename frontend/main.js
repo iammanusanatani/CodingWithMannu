@@ -60,3 +60,6 @@ function revealCards() {
 }
 
 window.addEventListener('scroll', revealCards);
+
+
+

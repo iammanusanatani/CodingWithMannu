@@ -23,6 +23,7 @@ body {
 /* HEADER */
 header {
   text-align: center;
+  margin-top: 30px;
   margin-bottom: 30px;
 }
 
@@ -45,6 +46,9 @@ header p {
   margin-bottom: 20px;
   border: 1px solid rgba(255,255,255,0.08);
   transition: 0.3s;
+}
+.card h2{
+  margin-bottom: 12px;
 }
 
 .card:hover {
@@ -94,6 +98,7 @@ header p {
   font-size: 12px;
   background: #0f172a;
   padding: 0 6px;
+  border-radius: 4px;
 }
 
 /* BUTTON */

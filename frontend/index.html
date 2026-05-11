@@ -15,6 +15,8 @@
     <link rel="stylesheet" href="sidebar.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="founder.css">
+    <link rel="stylesheet" href="reels.css">
 
 </head>
 
@@ -31,10 +33,10 @@
                 <div class="menuList">
                     <a href="index.html" class="meanulisticon">Home</a>
                     <a href="tutorials.html" class="meanulisticon">Tutorials</a>
-                    <a href="#" class="meanulisticon">Blog</a>
                     <a href="notes.html" class="meanulisticon">Notes</a>
                     <a href="course.html" class="meanulisticon">Course</a>
                     <a href="#contactSection" class="meanulisticon">Contact</a>
+                    <a href="#community" class="meanulisticon">Community</a>
                     <span id="nav-auth-top" style="text-transform: capitalize;"></span>
                 </div>
             </div>
@@ -82,7 +84,7 @@
             <div class="navLinks">
                 <a href="index.html">🏠 Home</a>
                 <a href="tutorials.html">📚 Tutorials</a>
-                <a href="#">📝 Blog</a>
+                <a href="community.html">👥 Community</a>
                 <a href="notes.html">📄 Notes</a>
                 <a href="course.html">🎓 Course</a>
                 <a href="#contactSection">📞 Contact</a>
@@ -121,6 +123,7 @@
             </div>
         </div>
     </section>
+
     <section class="hero-code-container">
         <div class="code-box">
             <div class="code-header">
@@ -132,11 +135,34 @@
         </div>
     </section>
 
+    <section class="founder-section">
+        <h2>Meet The Visionary</h2>
+
+        <div class="founder-card">
+
+            <div class="founder-img">
+                <img src="img/founder.img.jpeg" alt="Founder">
+            </div>
+
+            <div class="founder-name">Manu Suryavanshi</div>
+            <div class="founder-role">Founder & CEO</div>
+
+            <div class="socials">
+                <a href="https://www.instagram.com/iammanusuryavanshi?igsh=eWMybWY3dG1od3Q=" title="Instagram"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="https://iammanusanatani.github.io/Portfolio/" title="Portfolio"><i
+                        class="fa-solid fa-briefcase"></i></a>
+            </div>
+
+        </div>
+
+    </section>
+
     <!-- featureSection -->
 
     <section id="featureSection" class="featureSection">
-        <div class="featureGrid">
-
+        <h2>Quick Links</h2>
+        <div class="featureContainer">
             <div class="featureCard notes">
                 <div class="icon">📘</div>
                 <h3>Notes</h3>
@@ -160,24 +186,293 @@
         </div>
     </section>
 
+    <!-- reels section -->
+    <section class="reels-section">
+
+        <div class="floating-glow"></div>
+
+        <div class="section-top">
+
+            <div class="section-title">
+                <h2>Coding Reels</h2>
+                <p>Learn Coding with Short Tech Reels</p>
+            </div>
+
+            <!-- <div class="scroll-buttons">
+                <button class="scroll-btn" onclick="scrollLeftBtn()">❮</button>
+                <button class="scroll-btn" onclick="scrollRightBtn()">❯</button>
+            </div> -->
+        </div>
+
+        <div class="reels-container" id="reelsContainer">
+            <!-- Reel 1 -->
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/python.mp4" type="video/mp4">
+                </video>
+
+                <div class="play-btn">▶</div>
+
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🔥 Viral</div>
+                        <div class="duration">0:43</div>
+                    </div>
+
+                    <div class="bottom-content">
+                        <div class="category">Python</div>
+                        <div class="reel-title">Learn Python Fast 🚀</div>
+
+                        <div class="stats">
+                            <span>👁 120K</span>
+                            <span>❤️ 18K</span>
+                            <span>💬 2K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/html.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Trending</div>
+                        <div class="duration">0:39</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">HTML</div>
+                        <div class="reel-title">HTML Basics for Beginners</div>
+                        <div class="stats">
+                            <span>👁 95K</span>
+                            <span>❤️ 12K</span>
+                            <span>💬 1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel3.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🔥 Hot</div>
+                        <div class="duration">0:28</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">CSS</div>
+                        <div class="reel-title">Amazing CSS Animations</div>
+                        <div class="stats">
+                            <span>👁 88K</span>
+                            <span>❤️ 10K</span>
+                            <span>💬 900</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel4.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">⚡ New</div>
+                        <div class="duration">0:35</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">JavaScript</div>
+                        <div class="reel-title">JS Tricks You Need</div>
+                        <div class="stats">
+                            <span>👁 110K</span>
+                            <span>❤️ 16K</span>
+                            <span>💬 1.5K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel5.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🔥 Viral</div>
+                        <div class="duration">0:26</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">React</div>
+                        <div class="reel-title">React in 1 Minute</div>
+                        <div class="stats">
+                            <span>👁 140K</span>
+                            <span>❤️ 20K</span>
+                            <span>💬 2.2K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel6.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Pro</div>
+                        <div class="duration">0:20</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">NodeJS</div>
+                        <div class="reel-title">Backend Secrets</div>
+                        <div class="stats">
+                            <span>👁 70K</span>
+                            <span>❤️ 9K</span>
+                            <span>💬 700</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel7.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🔥 Hot</div>
+                        <div class="duration">0:29</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">UI/UX</div>
+                        <div class="reel-title">Modern UI Design Tips</div>
+                        <div class="stats">
+                            <span>👁 99K</span>
+                            <span>❤️ 13K</span>
+                            <span>💬 1.1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel8.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 New</div>
+                        <div class="duration">0:31</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">AI</div>
+                        <div class="reel-title">AI Tools for Developers</div>
+                        <div class="stats">
+                            <span>👁 160K</span>
+                            <span>❤️ 24K</span>
+                            <span>💬 3K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel9.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🔥 Trending</div>
+                        <div class="duration">0:22</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">Coding</div>
+                        <div class="reel-title">Top Coding Hacks</div>
+                        <div class="stats">
+                            <span>👁 115K</span>
+                            <span>❤️ 17K</span>
+                            <span>💬 1.9K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="reel-card">
+                <video class="reel-video" muted>
+                    <source src="videos/reel10.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">⚡ Popular</div>
+                        <div class="duration">0:27</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">Web Dev</div>
+                        <div class="reel-title">Frontend Magic Tricks</div>
+                        <div class="stats">
+                            <span>👁 130K</span>
+                            <span>❤️ 19K</span>
+                            <span>💬 2.3K</span>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        <!-- FULLSCREEN PLAYER -->
+
+        <div class="fullscreen-player" id="fullscreenPlayer">
+
+            <div class="close-btn" id="closeBtn">✖</div>
+
+            <video id="fullscreenVideo" controls autoplay></video>
+
+        </div>
+    </section>
+
+
     <section id="contactSection" class="contact">
-        <p>Have questions about our courses? Send us a message and we’ll get back to you.</p>
-        <form id="contactForm">
-            <h2>Contact Us</h2>
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" required></textarea>
+        <div class="contactContainer">
+            <p>"Let’s connect! Whether you have a question, idea, or feedback — we’re always ready to hear from you."
+            </p>
+            <form id="contactForm">
+                <h2>Contact Us</h2>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
 
-            <button type="submit">Send Message</button>
-            <div id="loader" style="display:none;">Sending...</div>
-            <p id="status"></p>
-        </form>
+                <button type="submit">Send Message</button>
+                <div id="loader" style="display:none;">Sending...</div>
+                <p id="status"></p>
+            </form>
+        </div>
     </section>
 
-    <section class="community">
-        <a href="community.html">Community</a>
+    <section id="community">
+        <div class="communityContainer">
+            <p>"Join our community of learners and developers. Share knowledge, ask questions, and grow together."</p>
+            <a href="community.html">Join Community</a>
+        </div>
     </section>
-
     <!-- Footer -->
 
     <footer class="footer">
@@ -230,80 +525,9 @@
             <p>&copy; 2026 CodingWithMannu. All rights reserved.</p>
         </div>
     </footer>
-
+    <script src="contact.js"></script>
     <script src="script.js"></script>
-    <script>
-        document.getElementById("contactForm").addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    // Inputs
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let message = document.getElementById("message").value.trim();
-
-    let loader = document.getElementById("loader");
-    let status = document.getElementById("status");
-    let button = document.querySelector("button");
-
-    // Validation
-    if (!name || !email || !message) {
-        status.style.color = "red";
-        status.innerText = "❌ Please fill all fields";
-        return;
-    }
-
-    // UI start loading
-    loader.style.display = "block";
-    status.innerText = "";
-    button.disabled = true;
-
-    try {
-        let res = await fetch("https://codingwithmannu-1.onrender.com/send-email", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ name, email, message })
-        });
-
-        if (!res.ok) {
-            throw new Error("Server error");
-        }
-
-        let data = await res.json();
-
-        // stop loader
-        loader.style.display = "none";
-        button.disabled = false;
-
-        if (data.success) {
-            status.style.color = "green";
-            status.innerText = "Message sent successfully!";
-
-            // reset form
-            this.reset();
-
-            // auto hide message after 3 sec
-            setTimeout(() => {
-                status.innerText = "";
-            }, 3000);
-
-        } else {
-            status.style.color = "red";
-            status.innerText = "Failed to send message";
-        }
-
-    } catch (error) {
-        loader.style.display = "none";
-        button.disabled = false;
-
-        status.style.color = "red";
-        status.innerText = "Network error!";
-        console.log(error);
-    }
-});
-    </script>
-
+    <script src="reels.js"></script>
 </body>
 
 </html>
