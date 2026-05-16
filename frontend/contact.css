@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 750px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+header p {
+  color: #94a3b8;
+  margin-top: 5px;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ===== Container ===== */
+.contactContainer {
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    text-align: center;
+}
+
+/* Intro Text */
+.contactContainer p {
+    font-size: 16px;
+    color: #cbd5f5;
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+/* ===== Form ===== */
+#contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* Heading */
+#contactForm h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+/* Inputs & Textarea */
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #0072ff;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #fff;
+    background: none;
+    outline: none;
+    transition: 0.3s;
+}
+
+/* Focus effect */
+#contactForm input:focus,
+#contactForm textarea:focus {
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
+}
+
+/* Textarea height */
+#contactForm textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Button */
+#contactForm button {
+    padding: 12px;
+    background: #0072ff;
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#contactForm button:hover {
+    background: #2575fc;
+}
+
+/* Status message */
+#status {
+    font-size: 14px;
+    margin-top: 10px;
+    color: green;
+}
+
+/* ===== Responsive Design ===== */
+
+/* Tablets */
+@media (max-width: 768px) {
+    .contactContainer {
+        padding: 25px;
+    }
+
+    #contactForm h2 {
+        font-size: 24px;
+    }
+
+    .contactContainer p {
+        font-size: 15px;
+    }
+    
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .contact {
+        padding: 20px 10px;
+    }
+
+    .contactContainer {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    #contactForm h2 {
+        font-size: 22px;
+    }
+
+    #contactForm button {
+        font-size: 15px;
+    }
+    #contactHeading{
+        font-size: 18px;
+    }
+
+}
+
+#status {
+    margin-top: 10px;
+    text-align: left;
+    font-size: small;
+
+}
+
+/* Success message */
+.success {
+    color: #22c55e;
+}
+
+/* Error message */
+.error {
+    color: red;
+}
+
+#loader {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #667eea;
+    text-align: center;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0.3;
+    }
+}

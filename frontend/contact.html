@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ContactUs - CodingWithMannu</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="community.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <header>
+            <h1 id="contactHeading">CodingWithMannu Communication</h1>
+            <p>“Let’s build something extraordinary together.”</p>
+        </header>
+
+        <!-- FORM CARD -->
+        <div class="card">
+            <h2>Contact With Us</h2>
+            <form id="contactForm">
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+                <div id="loader" style="display:none;">Sending...</div>
+                <p id="status"></p>
+            </form>
+        </div>
+    </div>
+</body>
+<script src="contact.js"></script>
+
+</html>

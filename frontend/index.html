@@ -18,11 +18,47 @@
     <link rel="stylesheet" href="founder.css">
     <link rel="stylesheet" href="reels.css">
 
+
 </head>
 
 <body>
     <canvas id="matrix"></canvas>
     <canvas id="particles"></canvas>
+
+    <!-- VIDEO POPUP -->
+
+    <div class="video-popup" id="videoPopup">
+        <div class="vc-container">
+            <div class="vc-heading">
+                <!-- CLOSE BUTTON -->
+                <button class="close-btn" onclick="closeVideo()">
+                    ×
+                </button>
+
+                <!-- VIDEO -->
+                <h1>Welcome to CodingWithMannu</h1>
+                <p>Learn Coding the Easy Way</p>
+            </div>
+            <div class="video-box">
+
+                <!-- VIDEO -->
+                <video id="introVideo" autoplay loop muted preload="auto" playsinline>
+                    <source src="videos/welcomeDemo.mp4" type="video/mp4">
+                </video>
+
+            </div>
+            <div id="introcode">
+                <div class="code-header">
+                    <div class="dot red"></div>
+                    <div class="dot yellow"></div>
+                    <div class="dot green"></div>
+                </div>
+                <pre id="code"></pre>
+            </div>
+        </div>
+
+    </div>
+
     <header>
         <nav class="header">
             <div class="headeritems Hitem1">
@@ -119,12 +155,12 @@
                 </div>
             </div>
             <div class="heroItems heroItem4">
-                <h class="dailyupdata">{ Daily Updata on 9:30 AM }</h>
+                <h class="dailyupdata">{ Daily Update on 9:30 AM }</h>
             </div>
         </div>
     </section>
 
-    <section class="hero-code-container">
+    <!-- <section class="hero-code-container">
         <div class="code-box">
             <div class="code-header">
                 <div class="dot red"></div>
@@ -133,7 +169,7 @@
             </div>
             <pre id="code"></pre>
         </div>
-    </section>
+    </section> -->
 
     <section class="founder-section">
         <h2>Meet The Visionary</h2>
@@ -141,7 +177,7 @@
         <div class="founder-card">
 
             <div class="founder-img">
-                <img src="img/founder.img.jpeg" alt="Founder">
+                <img src="img/founder.img.jpeg" alt="Founder" id="openModal">
             </div>
 
             <div class="founder-name">Manu Suryavanshi</div>
@@ -154,6 +190,22 @@
                         class="fa-solid fa-briefcase"></i></a>
             </div>
 
+        </div>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <!-- Close Button -->
+                <button class="close" id="closeModal">&times;</button>
+                <h2 style="color:#7c3aed;">About My Website</h2>
+                <p>
+                    Hey 👋 I’m Manu Suryavanshi, creator of <strong style="color:coral;">CodingWithMannu</strong>.
+                    I started this platform to help beginners learn coding in the easiest and most interesting way
+                    possible.
+                    From HTML, CSS, JavaScript to Full Stack Development, projects, and coding tips — everything here is
+                    made for learners who want real skills, not just theory.
+                    Learn. Build. Grow 🚀
+                </p>
+            </div>
         </div>
 
     </section>
@@ -181,7 +233,14 @@
                 <div class="icon">💻</div>
                 <h3>Projects</h3>
                 <p>Build real world projects</p>
-                <a href="#">Explore</a>
+                <a href="projects.html">Explore</a>
+            </div>
+
+            <div class="featureCard example">
+                <div class="icon">🧪</div>
+                <h3>Example</h3>
+                <p>Code Examples multiple languages</p>
+                <a href="examples.html">Explore</a>
             </div>
         </div>
     </section>
@@ -195,7 +254,7 @@
 
             <div class="section-title">
                 <h2>Coding Reels</h2>
-                <p>Learn Coding with Short Tech Reels</p>
+                <p class="reel-p">Learn Coding with Short Tech Reels</p>
             </div>
 
             <!-- <div class="scroll-buttons">
@@ -207,7 +266,7 @@
         <div class="reels-container" id="reelsContainer">
             <!-- Reel 1 -->
             <div class="reel-card">
-                <video class="reel-video" muted>
+                <video class="reel-video" muted preload="auto" playsinline poster="img/whatispy.png">
                     <source src="videos/python.mp4" type="video/mp4">
                 </video>
 
@@ -221,7 +280,7 @@
 
                     <div class="bottom-content">
                         <div class="category">Python</div>
-                        <div class="reel-title">Learn Python Fast 🚀</div>
+                        <div class="reel-title">Learn Python Fast</div>
 
                         <div class="stats">
                             <span>👁 120K</span>
@@ -232,10 +291,10 @@
                 </div>
             </div>
 
-
+            <!-- Reel 2 -->
 
             <div class="reel-card">
-                <video class="reel-video" muted>
+                <video class="reel-video" muted preload="auto" playsinline poster="img/whatishtml.png">
                     <source src="videos/html.mp4" type="video/mp4">
                 </video>
                 <div class="play-btn">▶</div>
@@ -246,7 +305,7 @@
                     </div>
                     <div class="bottom-content">
                         <div class="category">HTML</div>
-                        <div class="reel-title">HTML Basics for Beginners</div>
+                        <div class="reel-title">Learn HTML Fast</div>
                         <div class="stats">
                             <span>👁 95K</span>
                             <span>❤️ 12K</span>
@@ -256,9 +315,107 @@
                 </div>
             </div>
 
-            <!-- <div class="reel-card">
-                <video class="reel-video" muted>
-                    <source src="videos/reel3.mp4" type="video/mp4">
+            <!-- Reel 3 -->
+
+            <div class="reel-card">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/webdev.png">
+                    <source src="videos/webdev.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Trending</div>
+                        <div class="duration">0:25</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">Web</div>
+                        <div class="reel-title">Web Developer?</div>
+                        <div class="stats">
+                            <span>👁 95K</span>
+                            <span>❤️ 12K</span>
+                            <span>💬 1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reel 4 -->
+
+            <div class="reel-card">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/htmlcssjs.png">
+                    <source src="videos/html_css_js.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Trending</div>
+                        <div class="duration">0:24</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">Web</div>
+                        <div class="reel-title">HTML vs CSS vs JS</div>
+                        <div class="stats">
+                            <span>👁 95K</span>
+                            <span>❤️ 12K</span>
+                            <span>💬 1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reel 5 -->
+
+            <div class="reel-card">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/apis.png">
+                    <source src="videos/apis.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Trending</div>
+                        <div class="duration">0:44</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">APIs</div>
+                        <div class="reel-title">What is an APIs?</div>
+                        <div class="stats">
+                            <span>👁 95K</span>
+                            <span>❤️ 12K</span>
+                            <span>💬 1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reel 6 -->
+
+            <div class="reel-card">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/github.png">
+                    <source src="videos/github.mp4" type="video/mp4">
+                </video>
+                <div class="play-btn">▶</div>
+                <div class="overlay">
+                    <div class="top-content">
+                        <div class="badge">🚀 Trending</div>
+                        <div class="duration">0:34</div>
+                    </div>
+                    <div class="bottom-content">
+                        <div class="category">GitHub</div>
+                        <div class="reel-title">What is the GitHub?</div>
+                        <div class="stats">
+                            <span>👁 95K</span>
+                            <span>❤️ 12K</span>
+                            <span>💬 1K</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reel 7 -->
+
+            <div class="reel-card">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/internet.png">
+                    <source src="videos/internet.mp4" type="video/mp4">
                 </video>
                 <div class="play-btn">▶</div>
                 <div class="overlay">
@@ -267,8 +424,8 @@
                         <div class="duration">0:28</div>
                     </div>
                     <div class="bottom-content">
-                        <div class="category">CSS</div>
-                        <div class="reel-title">Amazing CSS Animations</div>
+                        <div class="category">Internet</div>
+                        <div class="reel-title">How does Internet work?</div>
                         <div class="stats">
                             <span>👁 88K</span>
                             <span>❤️ 10K</span>
@@ -278,9 +435,11 @@
                 </div>
             </div>
 
+            <!-- Reel 8 -->
+
             <div class="reel-card">
-                <video class="reel-video" muted>
-                    <source src="videos/reel4.mp4" type="video/mp4">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/webdeploy.png">
+                    <source src="videos/webdeploy.mp4" type="video/mp4">
                 </video>
                 <div class="play-btn">▶</div>
                 <div class="overlay">
@@ -289,8 +448,8 @@
                         <div class="duration">0:35</div>
                     </div>
                     <div class="bottom-content">
-                        <div class="category">JavaScript</div>
-                        <div class="reel-title">JS Tricks You Need</div>
+                        <div class="category">Deploy</div>
+                        <div class="reel-title">How Website Deploy?</div>
                         <div class="stats">
                             <span>👁 110K</span>
                             <span>❤️ 16K</span>
@@ -300,10 +459,12 @@
                 </div>
             </div>
 
-        
+            <!-- Reel 9 -->
+
+
             <div class="reel-card">
-                <video class="reel-video" muted>
-                    <source src="videos/reel5.mp4" type="video/mp4">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/database.png">
+                    <source src="videos/database.mp4" type="video/mp4">
                 </video>
                 <div class="play-btn">▶</div>
                 <div class="overlay">
@@ -312,8 +473,8 @@
                         <div class="duration">0:26</div>
                     </div>
                     <div class="bottom-content">
-                        <div class="category">React</div>
-                        <div class="reel-title">React in 1 Minute</div>
+                        <div class="category">DBMS</div>
+                        <div class="reel-title">Introuction to DataBase</div>
                         <div class="stats">
                             <span>👁 140K</span>
                             <span>❤️ 20K</span>
@@ -323,10 +484,12 @@
                 </div>
             </div>
 
-            
+            <!-- Reel 10 -->
+
+
             <div class="reel-card">
-                <video class="reel-video" muted>
-                    <source src="videos/reel6.mp4" type="video/mp4">
+                <video class="reel-video" muted preload="auto" playsinline poster="img/cloudcomputing.png">
+                    <source src="videos/cloudcomputing.mp4" type="video/mp4">
                 </video>
                 <div class="play-btn">▶</div>
                 <div class="overlay">
@@ -335,8 +498,8 @@
                         <div class="duration">0:20</div>
                     </div>
                     <div class="bottom-content">
-                        <div class="category">NodeJS</div>
-                        <div class="reel-title">Backend Secrets</div>
+                        <div class="category">Cloud Computing</div>
+                        <div class="reel-title">what is Cloud Computing?</div>
                         <div class="stats">
                             <span>👁 70K</span>
                             <span>❤️ 9K</span>
@@ -346,8 +509,8 @@
                 </div>
             </div>
 
-            
-            <div class="reel-card">
+
+            <!--<div class="reel-card">
                 <video class="reel-video" muted>
                     <source src="videos/reel7.mp4" type="video/mp4">
                 </video>
@@ -449,24 +612,16 @@
         </div>
     </section>
 
-
-    <section id="contactSection" class="contact">
-        <div class="contactContainer">
+    <!-- contact section -->
+    <section id="contact">
+        <div class="ContactContainer">
             <p>"Let’s connect! Whether you have a question, idea, or feedback — we’re always ready to hear from you."
             </p>
-            <form id="contactForm">
-                <h2>Contact Us</h2>
-                <input type="text" id="name" placeholder="Your Name" required>
-                <input type="email" id="email" placeholder="Your Email" required>
-                <textarea id="message" placeholder="Your Message" required></textarea>
-
-                <button type="submit">Send Message</button>
-                <div id="loader" style="display:none;">Sending...</div>
-                <p id="status"></p>
-            </form>
+            <a href="contact.html">Contact Us</a>
         </div>
     </section>
 
+    <!-- community section -->
     <section id="community">
         <div class="communityContainer">
             <p>"Join our community of learners and developers. Share knowledge, ask questions, and grow together."</p>
@@ -483,8 +638,9 @@
             <!-- About Section -->
             <div class="footer-column">
                 <h3>About Us</h3>
-                <p>We provide high-quality courses in AI/ML, Web Development, Data Science, and more to help learners
-                    build future-ready skills.</p>
+                <p>“At CodingWithManu, we make coding simple, practical, and inspiring for learners of all levels. Our
+                    mission is to empower future developers with clear guidance, real-world skills, and innovative
+                    learning experiences.”</p>
             </div>
 
             <!-- Quick Links -->
@@ -503,7 +659,7 @@
                 <h3>Contact</h3>
                 <ul>
                     <li>Email: codingwithmannu@gmail.com</li>
-                    <li>Phone: +91</li>
+                    <li>Phone: +91 9997036733</li>
                     <li>Address: Uttar Pradesh, India</li>
                 </ul>
             </div>
@@ -525,9 +681,59 @@
             <p>&copy; 2026 CodingWithMannu. All rights reserved.</p>
         </div>
     </footer>
-    <script src="contact.js"></script>
+    <script>
+        const playButtons = document.querySelectorAll(".play-btn");
+
+        const fullscreenPlayer = document.getElementById("fullscreenPlayer");
+
+        const fullscreenVideo = document.getElementById("fullscreenVideo");
+
+        const closeBtn = document.getElementById("closeBtn");
+
+
+
+
+        playButtons.forEach(btn => {
+
+            btn.addEventListener("click", () => {
+
+                const reelCard = btn.parentElement;
+
+                const videoSource = reelCard.querySelector("source").src;
+
+                fullscreenPlayer.style.display = "flex";
+
+                fullscreenVideo.src = videoSource;
+
+                fullscreenVideo.play();
+
+            });
+
+        });
+
+        closeBtn.addEventListener("click", () => {
+
+            fullscreenPlayer.style.display = "none";
+
+            fullscreenVideo.pause();
+
+        });
+
+        const modal = document.getElementById("myModal");
+        const openBtn = document.getElementById("openModal");
+        const fcloseBtn = document.getElementById("closeModal");
+
+        openBtn.onclick = () => modal.style.display = "block";
+        fcloseBtn.onclick = () => modal.style.display = "none";
+        window.onclick = (event) => {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+    </script>
     <script src="script.js"></script>
-    <script src="reels.js"></script>
+    <script src="founder.js"></script>
 </body>
 
 </html>

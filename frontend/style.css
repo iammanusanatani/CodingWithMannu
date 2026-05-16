@@ -280,7 +280,7 @@ header {
     }
 
     .heroSub {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .founder-section h2 {
@@ -309,7 +309,7 @@ header {
     }
 
     .heroSub {
-        font-size: 24px;
+        font-size: 18px;
     }
 
     .founder-section h2 {
@@ -465,27 +465,42 @@ header {
     padding: 10px 20px;
     font-size: 14px;
     color: #fff;
-    background: #0072ff;
+    /* background: #0072ff; */
     border-radius: 8px;
     text-decoration: none;
     transition: 0.3s;
 }
 
-.featureCard a:hover {
+/* .featureCard a:hover {
     background: #357bd8;
-}
+} */
 
 /* ===== Individual Card Colors ===== */
 .notes {
     border-top: 4px solid #4a90e2;
 }
+.notes a{
+    background-color: #4a90e2;
+}
 
 .courses {
     border-top: 4px solid #6a5acd;
 }
+.courses a{
+    background-color: #6a5acd;
+}
 
 .projects {
     border-top: 4px solid #ff7a18;
+}
+.projects a {
+    background-color:#ff7a18;
+}
+.example{
+    border-top: 4px solid #00f260;
+}
+.example a{
+    background-color: #00f260;
 }
 
 /* ===== Responsive Design ===== */
@@ -535,183 +550,26 @@ header {
     }
 }
 
-/* ===== Contact Section ===== */
-.contact {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
-}
-
-/* ===== Container ===== */
-.contactContainer {
-    max-width: 900px;
-    width: 100%;
-    padding: 40px;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    text-align: center;
-}
-
-/* Intro Text */
-.contactContainer p {
-    font-size: 16px;
-    color: #cbd5f5;
-    margin-bottom: 25px;
-    line-height: 1.6;
-}
-
-/* ===== Form ===== */
-#contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    border-radius: 8px;
-    padding: 12px;
-}
-
-/* Heading */
-#contactForm h2 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-/* Inputs & Textarea */
-#contactForm input,
-#contactForm textarea {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #0072ff;
-    border-radius: 8px;
-    font-size: 15px;
-    color: #fff;
-    background: none;
-    outline: none;
-    transition: 0.3s;
-}
-
-/* Focus effect */
-#contactForm input:focus,
-#contactForm textarea:focus {
-    box-shadow: 0 0 5px rgba(74, 144, 226, 0.3);
-}
-
-/* Textarea height */
-#contactForm textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* Button */
-#contactForm button {
-    padding: 12px;
-    background: #0072ff;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-#contactForm button:hover {
-    background: #2575fc;
-}
-
-/* Status message */
-#status {
-    font-size: 14px;
-    margin-top: 10px;
-    color: green;
-}
-
-/* ===== Responsive Design ===== */
-
-/* Tablets */
-@media (max-width: 768px) {
-    .contactContainer {
-        padding: 25px;
-    }
-
-    #contactForm h2 {
-        font-size: 24px;
-    }
-
-    .contactContainer p {
-        font-size: 15px;
-    }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-    .contact {
-        padding: 20px 10px;
-    }
-
-    .contactContainer {
-        padding: 20px;
-        border-radius: 10px;
-    }
-
-    #contactForm h2 {
-        font-size: 22px;
-    }
-
-    #contactForm button {
-        font-size: 15px;
-    }
-}
-
-#status {
-    margin-top: 10px;
-    text-align: left;
-    font-size: small;
-
-}
-
-/* Success message */
-.success {
-    color: #22c55e;
-}
-
-/* Error message */
-.error {
-    color: red;
-}
-
-#loader {
-    margin-top: 10px;
-    font-weight: bold;
-    color: #667eea;
-    text-align: center;
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0.3;
-    }
-}
-
-/* community Section */
-
 /* ===== Community Section ===== */
 #community {
     width: 100%;
-    min-height: 60vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 60px 20px;
+    padding: 20px;
+}
+#contact{
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 /* Container */
-.communityContainer {
+.communityContainer, .ContactContainer {
     max-width: 900px;
     width: 100%;
     text-align: center;
@@ -732,9 +590,26 @@ header {
     line-height: 1.6;
     margin-bottom: 25px;
 }
+.ContactContainer p{
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
 
 /* Button Link */
 .communityContainer a {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 16px;
+    color: #fff;
+    border: 2px solid #0072ff;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.ContactContainer a{
     display: inline-block;
     padding: 12px 25px;
     font-size: 16px;
@@ -752,20 +627,25 @@ header {
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
+.ContactContainer a:hover{
+     background: #0072ff;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
 
 /* ===== Responsive Design ===== */
 
 /* Tablets */
 @media (max-width: 768px) {
-    .communityContainer {
+    .communityContainer, .ContactContainer {
         padding: 30px 20px;
     }
 
-    .communityContainer p {
+    .communityContainer p , .ContactContainer p {
         font-size: 16px;
     }
 
-    .communityContainer a {
+    .communityContainer a , .ContactContainer a {
         font-size: 15px;
         padding: 10px 22px;
     }
@@ -773,20 +653,24 @@ header {
 
 /* Mobile */
 @media (max-width: 480px) {
-    .community {
-        padding: 40px 15px;
+    #community {
+        padding: 15px;
+    }
+    #contact{
+        padding: 15px;
     }
 
-    .communityContainer {
+
+    .communityContainer, .ContactContainer {
         padding: 25px 15px;
         border-radius: 12px;
     }
 
-    .communityContainer p {
+    .communityContainer p, .ContactContainer p {
         font-size: 15px;
     }
 
-    .communityContainer a {
+    .communityContainer a , .ContactContainer a{
         width: 100%;
         text-align: center;
         display: block;

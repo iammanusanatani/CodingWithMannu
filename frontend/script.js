@@ -298,6 +298,34 @@ function typeCode() {
 typeCode();
 
 
+const popup = document.getElementById("videoPopup");
+const video = document.getElementById("introVideo");
+
+// Check if first visit
+if (!localStorage.getItem("videoShown")) {
+  // First time user → Always show
+  popup.style.display = "flex";
+  localStorage.setItem("videoShown", "true");
+} else {
+  // Already visited → Random chance on refresh
+  let showPopup = Math.random() < 0.3; // 30% chance
+  if (showPopup) {
+    popup.style.display = "flex";
+  } else {
+    popup.style.display = "none";
+  }
+}
+
+// Auto close when video ends
+video.onended = function () {
+  popup.style.display = "none";
+}
+
+// Close button
+function closeVideo() {
+  popup.style.display = "none";
+  video.pause();
+}
 
 
 
